@@ -1,0 +1,12 @@
+Object-Oriented Software Development
+CS:2820:AAA Fall 2014
+
+Project 6
+Team 5
+
+
+NAME					GITHUB					TASK
+Mary Feng				maryfeng				
+Austin Washburn			austinforlife
+Khashi (Paul) Reyes		KhashiReyes
+Xiaomeng Yang			maggieyang829
