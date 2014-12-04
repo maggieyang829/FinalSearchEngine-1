@@ -1,0 +1,48 @@
+Descriptions of roles, specification of work to be done, description of the unit tests, list of classes and interfaces to be written. 
+This should be submitted during discussion section on paper, and also in a group GitHub Repo shared with the professor and TA. 
+In the case of needing extra tools, initial research on sample code (for web server, for parsers etc) should also be evident by 5 December.
+
+NAME					GITHUB				PARTNER				TASK (from list of suggestions)
+Mary Feng				maryfeng			Xiaomeng Yang		3, 2 (>, <)
+Austin Washburn			austinforlife		Khashi Reyes		5, 2 
+Khashi (Paul) Reyes		KhashiReyes			Austin Washburn		1, 2
+Xiaomeng Yang			maggieyang829		Xiaomeng Yang		4, 2 (>, <)
+
+
+2.) 
+---Greater-than: 
+Class: Add this to the FieldSearch class, since it searches by Field. 
+Method: greaterThan returns a list of Fields whose Field values are alphabetically
+larger than the Field value specified in FieldSearch.
+Test 1:
+Load in some data. Make new Field and FieldSearch objects. Use method greaterThan on the
+FieldSearch object. Use an assertEquals statement to check that the number of Fields
+returned equals the correct amount from the data. 
+Test 2:
+Similar to test 1. Use the greaterThan method on a FieldSearch object, and use an
+assertEquals statement to check that the Field values returned are the ones alphabetically
+larger than the Field value specified in the FieldSearch object.
+---Less-than:
+Same as Greater-than above, but with Less-than. 
+
+3.) Combinations of searches
+Class: Make a new class, ComboSearch.  
+Method: andSearch takes 2 FieldSearch objects as input and returns a list of identifiers 
+that satisfies the intersection of the two types of searches. Similarly, orSearch takes
+2 FieldSearch objects as input and returns a list of identifiers which satisfies the
+union of the two types of searches.
+Test 1:
+Put in some data. Make two FieldSearch objects as input for the andSearch method. 
+Use an assertEquals statement to check that the number of identifiers returned equals 
+the number of identifiers that match both the first and second FieldSearches.
+Test 2:
+Put in some data. Make two FieldSearch objects as input for the orSearch method. 
+Use an assertEquals statement to check that the number of identifiers returned equals 
+the number of identifiers that match the first FieldSearch + the number of identifiers 
+that match the second FieldSearch - the number of identifiers that match both FieldSearches.
+
+
+
+
+
+

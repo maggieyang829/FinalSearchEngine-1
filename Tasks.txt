@@ -7,8 +7,8 @@ Team 5
 
 NAME					GITHUB				PARTNER				TASK (from list of suggestions)
 Mary Feng				maryfeng			Xiaomeng Yang		3
-Austin Washburn			austinforlife		Khashi Reyes		1 & 5
-Khashi (Paul) Reyes		KhashiReyes			Austin Washburn		1 & 5
+Austin Washburn			austinforlife		Khashi Reyes		5
+Khashi (Paul) Reyes		KhashiReyes			Austin Washburn		1
 Xiaomeng Yang			maggieyang829		Xiaomeng Yang		4
 
 
@@ -16,5 +16,7 @@ LOG
 12/2, T: Group meeting. Discussed splitting group into 2 pairs of partners: Mary & Xiaomeng, Austin & Khashi. 
 12/3, W: Mary & Xiaomeng met to talk about 3 & 4.
 	FieldSearch: add methods findLess, findGreater, findPrefix, findSuffix, findContains
-	Add new class (IDSearch) for method findID
+	Add new class (ComboSearch) for combinations of searches
 	Add new class (StringParser) for method parse
+12/4: Th: Mary, Austin, Xiaomeng met to discuss roles in the project in more detail and continue work in the
+	planning stage. Some notes are in Plan.txt.
