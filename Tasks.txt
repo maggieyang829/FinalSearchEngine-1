@@ -18,3 +18,5 @@ LOG
 	FieldSearch: add methods findLess, findGreater, findPrefix, findSuffix, findContains
 	Add new class (IDSearch) for method findID
 	Add new class (StringParser) for method parse
+12/4 Th: Austin, Mary, Xiaomeng meet to discuss order of actions and outline a more specific plan of action. 
+    Began writing out the description of roles, unit test descriptions, etc for assignment due on Friday the 5th.
