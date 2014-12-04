@@ -16,7 +16,14 @@ LOG
 12/2, T: Group meeting. Discussed splitting group into 2 pairs of partners: Mary & Xiaomeng, Austin & Khashi. 
 12/3, W: Mary & Xiaomeng met to talk about 3 & 4.
 	FieldSearch: add methods findLess, findGreater, findPrefix, findSuffix, findContains
+<<<<<<< HEAD
 	Add new class (ComboSearch) for combinations of searches
 	Add new class (StringParser) for method parse
 12/4: Th: Mary, Austin, Xiaomeng met to discuss roles in the project in more detail and continue work in the
 	planning stage. Some notes are in Plan.txt.
+=======
+	Add new class (IDSearch) for method findID
+	Add new class (StringParser) for method parse
+12/4 Th: Austin, Mary, Xiaomeng meet to discuss order of actions and outline a more specific plan of action. 
+    Began writing out the description of roles, unit test descriptions, etc for assignment due on Friday the 5th.
+>>>>>>> FETCH_HEAD
