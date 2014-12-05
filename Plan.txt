@@ -11,7 +11,7 @@ Xiaomeng Yang			maggieyang829		Xiaomeng Yang		4, 2 (>, <)
 
 2.) 
 ---Greater-than: 
-Class: Add this to the FieldSearch class, since it searches by Field. 
+Class: Make new class called GreaterThan. 
 Method: greaterThan returns a list of Fields whose Field values are alphabetically
 larger than the Field value specified in FieldSearch.
 Test 1:
@@ -43,7 +43,14 @@ that match the second FieldSearch - the number of identifiers that match both Fi
 
 4.) String Parsing
 Class: make a new class StringParser.
-Method: parseString takes one string as input and returns a list of substrings split by quotes and commas.
+Method: 1 parseString takes one string as input and returns a list of substrings split by quotes and commas.
+2 performSearch: Based on the kind of search it wants, it passes the field name and value to relevant search class.
+Test 1: Give a long string to the parseString method and assertEquals to see if the list returned can match
+Test 2: Using the result of parseString and let performSearch find the result. Using assertEquals to check if the
+value returned matches with the correct result.
+
+We have decided to use Single Responsibility principle, Open/Close principle in our implementation. 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 
 
