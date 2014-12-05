@@ -49,7 +49,11 @@ Test 1: Give a long string to the parseString method and assertEquals to see if 
 Test 2: Using the result of parseString and let performSearch find the result. Using assertEquals to check if the
 value returned matches with the correct result.
 
-We have decided to use Single Responsibility principle, Open/Close principle in our implementation. 
+We have decided to use Single Responsibility principle, Open/Close principle in our implementation.
+We implement SRP by making a new class for each additional type of search or new feature. In this way, each class
+only has one responsibility. 
+We follow open close principle by opening for extention but closed for modification in StringParser class.
+We will make an interface for different kinds of searches, and all the searches will inplement the interface.
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 
