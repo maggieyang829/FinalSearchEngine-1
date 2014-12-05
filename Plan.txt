@@ -101,7 +101,7 @@ desired functionality.
 Research: Khashi did substantial amount of research on REST Server and we will research more. Make sure to have correct
 software.
 
-Rolse: Austin & Khashi - REST Server design and implementation
+Roles: Austin & Khashi - REST Server design and implementation
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 
 
