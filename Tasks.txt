@@ -6,10 +6,10 @@ Team 5
 
 
 NAME					GITHUB				PARTNER				TASK (from list of suggestions)
-Mary Feng				maryfeng			Xiaomeng Yang		3
-Austin Washburn			austinforlife		Khashi Reyes		5
-Khashi (Paul) Reyes		KhashiReyes			Austin Washburn		1
-Xiaomeng Yang			maggieyang829		Xiaomeng Yang		4
+Mary Feng				maryfeng			Xiaomeng Yang				3
+Austin Washburn				austinforlife			Khashi Reyes				5
+Khashi (Paul) Reyes			KhashiReyes			Austin Washburn				1
+Xiaomeng Yang				maggieyang829			Xiaomeng Yang				4
 
 
 LOG
@@ -25,5 +25,6 @@ LOG
 	Add new class (IDSearch) for method findID
 	Add new class (StringParser) for method parse
 12/4 Th: Austin, Mary, Xiaomeng meet to discuss order of actions and outline a more specific plan of action. 
-    Began writing out the description of roles, unit test descriptions, etc for assignment due on Friday the 5th.
+    	Began writing out the description of roles, unit test descriptions, etc for assignment due on Friday the 5th.
+12/4 Th: Khashi researched REST interface 
 >>>>>>> FETCH_HEAD
