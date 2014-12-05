@@ -8,7 +8,9 @@ Austin Washburn			austinforlife		Khashi Reyes		5, 2
 Khashi (Paul) Reyes		KhashiReyes			Austin Washburn		1, 2
 Xiaomeng Yang			maggieyang829		Xiaomeng Yang		4, 2 (>, <)
 
-
+~~ Priorities ~~
+Importance: Designing these classes and tests will help Xiaomeng and Mary when they move 
+forward in designing the combo searches. We are trying to follow TDD as closely as possible.
 2.) 
 ---Greater-than: 
 Class: Make new class called GreaterThan. 
@@ -24,6 +26,26 @@ assertEquals statement to check that the Field values returned are the ones alph
 larger than the Field value specified in the FieldSearch object.
 ---Less-than:
 Same as Greater-than above, but with Less-than. 
+
+(Austin and Khashi)
+---Suffix, Prefix, Contains:
+Design: Create a class and interface for each of these searches, where the interface is a 
+contract between the FieldSearch class and the appropriate search class. 
+
+Principles:This satisfies the SRP by assuring the FieldSearch doesn't need to change when the searches change. It also satisfies the
+DIP because the special search classes will be implemented based on what FieldSearch dictates. It also
+satisfies the ISP, by ensuring each special search doesn't depend on all of the other special searches.
+The OCP is also satisfied by this design.
+
+Roles: Austin will design and implement the classes and the interfaces (likely with help from Khashi), and Khashi 
+will design and implement unit tests (done by communication with Austin). The tests will assure Austin is
+properly designing and implementing his code. We plan to write tests in parallel with code before moving on.
+
+Unit Test: Add input into the database and check to see if our code returns the proper results based on the search
+description. We will add tests for ensuring the Iterator is working properly once we begin writing code for that.
+
+Research: Typical research involved with development.
+
 
 3.) Combinations of searches
 Class: Make a new class, ComboSearch.  
@@ -55,6 +77,22 @@ only has one responsibility.
 We follow open close principle by opening for extention but closed for modification in StringParser class.
 We will make an interface for different kinds of searches, and all the searches will inplement the interface.
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+1.) Iterators (Austin and Khashi)
+Design: Implement Java's iterator interface with FieldSearch, while FieldSearch dictates how each special
+search class implements it's iterator. 
+
+Principles: This satisfies the DIP ensuring that the special search classes depend upon the abstractions in 
+FieldSearch and not the other way around. This idea follows from OCP, again reassuring that FieldSearch isn't 
+changed based on what the special search classes are doing.
+
+Unit tests: Our tests will use the already written tests for the special search classes. This tests not only
+valid output, but also tests that the iterator is returned correctly for each special search.
+
+Research: Typical research.
+
+Roles: Khashi - Iterator interface and change functions of special search classes. Austin - unit tests.
+
+5.) Server (Austin and Khashi)
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 
 
