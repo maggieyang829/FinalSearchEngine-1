@@ -77,7 +77,7 @@ only has one responsibility.
 We follow open close principle by opening for extention but closed for modification in StringParser class.
 We will make an interface for different kinds of searches, and all the searches will inplement the interface.
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-1.) Iterators (Austin and Khashi)
+5.) Iterators (Austin and Khashi)
 Design: Implement Java's iterator interface with FieldSearch, while FieldSearch dictates how each special
 search class implements it's iterator. 
 
@@ -92,7 +92,16 @@ Research: Typical research.
 
 Roles: Khashi - Iterator interface and change functions of special search classes. Austin - unit tests.
 
-5.) Server (Austin and Khashi)
+1.) Server (Austin and Khashi)
+Design: Implement and design REST Server Interface and XML file.
+
+Unit tests: To test the REST Server we will simply run and check the server to see if it connects correctly and has the
+desired functionality.
+
+Research: Khashi did substantial amount of research on REST Server and we will research more. Make sure to have correct
+software.
+
+Rolse: Austin & Khashi - REST Server design and implementation
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 
 
