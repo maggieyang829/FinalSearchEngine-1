@@ -41,6 +41,10 @@ Use an assertEquals statement to check that the number of identifiers returned e
 the number of identifiers that match the first FieldSearch + the number of identifiers 
 that match the second FieldSearch - the number of identifiers that match both FieldSearches.
 
+4.) String Parsing
+Class: make a new class StringParser.
+Method: parseString takes one string as input and returns a list of substrings split by quotes and commas.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 
 
 
