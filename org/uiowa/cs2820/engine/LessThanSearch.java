@@ -2,12 +2,10 @@ package org.uiowa.cs2820.engine;
 
 public class LessThanSearch implements Search{
 
-	String fieldName;
-	String fieldValue;
+	Field f;
 	
-	public LessThanSearch(String f, String v){
-		fieldName = f;
-		fieldValue = v;
+	public LessThanSearch(Field f){
+		this.f = f;
 	}
 	
 	@Override

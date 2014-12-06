@@ -3,9 +3,9 @@ package org.uiowa.cs2820.engine;
 public class ComboSearch implements Search {
 	Search obj1;
 	Search obj2;
-	Boolean s;			//true stands for And search, false stands for Or search
+	String s;			// s = "and" or "or"
 	
-	public ComboSearch(Search f1, Search f2, Boolean s){
+	public ComboSearch(Search f1, Search f2, String s){
 		obj1 = f1;
 		obj2 = f2;
 		this.s = s;

@@ -20,12 +20,12 @@ public class IntegrationTest {
 	I.addField(f);
 	I.addField(new Field("three",3));
 	FieldSearch F = new FieldSearch(f);
-	String[] S = F.findEquals();
+	String[] S = F.doSearch();
 	assertEquals(S.length,2);
 	assertEquals(S[0],"second.db");
 	assertEquals(S[1],"first.db");
 	I.remove();
-	S = F.findEquals();
+	S = F.doSearch();
 	assertEquals(S.length,1);
 	}
 
@@ -71,12 +71,12 @@ public class IntegrationTest {
   public void test2() {	
 	Field f = new Field("golden","rumex");
 	FieldSearch F = new FieldSearch(f);
-	String[] S = F.findEquals();
+	String[] S = F.doSearch();
 	assertEquals(S.length,1);
 	assertTrue(Arrays.asList(S).contains("2.txt"));
 	f = new Field("not","riparia");
 	F = new FieldSearch(f);
-	S = F.findEquals();
+	S = F.doSearch();
 	assertTrue(Arrays.asList(S).contains("1.txt"));
     }
   
@@ -84,7 +84,7 @@ public class IntegrationTest {
   public void test3() {
 	Field f = new Field("many","times");
 	FieldSearch F = new FieldSearch(f);
-	String [] S = F.findEquals();
+	String [] S = F.doSearch();
 	assertEquals(S.length,30);
 	for (String s: S) System.out.println(s);
     } 

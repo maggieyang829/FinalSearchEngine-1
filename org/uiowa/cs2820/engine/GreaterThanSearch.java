@@ -2,12 +2,10 @@ package org.uiowa.cs2820.engine;
 
 public class GreaterThanSearch implements Search{
 	
-	String fieldName;
-	String fieldValue;
+	Field f;
 	
-	public GreaterThanSearch(String f, String v){
-		fieldName = f;
-		fieldValue = v;
+	public GreaterThanSearch(Field f){
+		this.f = f;
 	}
 
 	@Override
