@@ -16,5 +16,10 @@ public class LessThanSearch implements Search{
 		if (R == null) R = new String[0];
 		return R;
 	}
+	
+	//this is only for test and debugging
+	public String toString() {
+		return "LessThanSearch (" + target.getFieldName() + "," + target.getFieldValue().toString() + ")";
+	}
 
 }

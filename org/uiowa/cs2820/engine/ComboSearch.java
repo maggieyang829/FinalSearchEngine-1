@@ -25,6 +25,10 @@ public class ComboSearch implements Search {
 	public String[] doSearch() {
 		// TODO Auto-generated method stub
 		return null;
-	}	
+	}
+	
+	public String toString() {
+		return "ComboSearch: (" + obj1.toString() + ")" + " " + s + " " + "(" + obj2.toString() + ")";
+	}
 	
 }
