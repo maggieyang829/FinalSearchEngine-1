@@ -1,0 +1,11 @@
+0.txt Part a
+1.txt Car truck
+2.txt Part rod
+3.txt Part anchor
+4.txt Part axle
+5.txt Part gear
+6.txt Car suv
+7.txt Part box
+8.txt Car sports 
+9.txt Part ankle
+w.txt EOF EOF

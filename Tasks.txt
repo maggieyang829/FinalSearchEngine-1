@@ -7,9 +7,9 @@ Team 5
 
 NAME					GITHUB				PARTNER				TASK (from list of suggestions)
 Mary Feng				maryfeng			Xiaomeng Yang				3
-Austin Washburn				austinforlife			Khashi Reyes				5
-Khashi (Paul) Reyes			KhashiReyes			Austin Washburn				1
-Xiaomeng Yang				maggieyang829			Xiaomeng Yang				4
+Austin Washburn			austinforlife		Khashi Reyes				5
+Khashi (Paul) Reyes		KhashiReyes			Austin Washburn				1
+Xiaomeng Yang			maggieyang829		Xiaomeng Yang				4
 
 
 LOG
