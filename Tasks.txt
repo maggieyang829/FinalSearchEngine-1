@@ -27,8 +27,9 @@ LOG
 12/4 Th: Austin, Mary, Xiaomeng meet to discuss order of actions and outline a more specific plan of action. 
     	Began writing out the description of roles, unit test descriptions, etc for assignment due on Friday the 5th.
 12/4 Th: Khashi researched REST interface 
-
+12/5 F: Group met in discussion to decide initial plans
 12/6 Sat: Austin and Khashi met for a few hours. Austin started reading through existing code to figure out the best
 	course of action for implementing special searches. Khashi researched how to return an iterator. We were able to
 	bounce ideas off of each other during this process.
+12/6 S: Mary added 
 >>>>>>> FETCH_HEAD

@@ -47,7 +47,7 @@ public class GreaterThanSearchTest {
 		  CurrentFields = (ArrayList<Field>)pairs.getValue();
 		  for (Field f: CurrentFields) {
 		    N.addField(f);
-		    //System.out.println("Added "+N+' '+f);
+		    System.out.println("Added "+N+' '+f);
 		    }
 		  }
 	    }

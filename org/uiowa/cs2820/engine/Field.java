@@ -18,6 +18,20 @@ public class Field implements Serializable {
     return FieldName.equals(other.FieldName) & 
 	   FieldValue.equals(other.FieldValue);
     }
+  // compare Fields for GreaterThanSearch
+  public boolean greaterThan(Field other) {
+	  if (FieldName.equals(other.FieldName)) {
+		  if (FieldValue.toString().compareTo(other.FieldValue.toString())>0) {
+			  System.out.println(FieldValue.toString() + " > " + other.FieldValue.toString());
+			  return true;
+		  }
+	  }
+	  System.out.println(FieldValue.toString() + " < " + other.FieldValue.toString());
+	  int t;
+	  t = "an".compareTo("ankle");
+	  System.out.println("t is " + t);
+	  return false;
+	  }
   public String toString() {
     return FieldName + ':' + FieldValue.toString();
     }
