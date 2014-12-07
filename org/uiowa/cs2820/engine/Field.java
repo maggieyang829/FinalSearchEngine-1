@@ -19,8 +19,10 @@ public class Field implements Serializable {
 	   FieldValue.equals(other.FieldValue);
     }
   // compare Fields for GreaterThanSearch
+  // this is giving weird results... need to fix
   public boolean greaterThan(Field other) {
-	  if (FieldName.equals(other.FieldName)) {
+	  return (FieldName.equals(other.FieldName)) & (FieldValue.toString().compareTo(other.FieldValue.toString())>0);
+	  /*if (FieldName.equals(other.FieldName)) {
 		  if (FieldValue.toString().compareTo(other.FieldValue.toString())>0) {
 			  System.out.println(FieldValue.toString() + " > " + other.FieldValue.toString());
 			  return true;
@@ -31,7 +33,14 @@ public class Field implements Serializable {
 	  t = "an".compareTo("ankle");
 	  System.out.println("t is " + t);
 	  return false;
+	  */
 	  }
+  // compare Fields for LessThanSearch
+  // this is giving weird results... need to fix
+  public boolean lessThan(Field other) {
+	  return (FieldName.equals(other.FieldName)) & (FieldValue.toString().compareTo(other.FieldValue.toString())<0);
+  }
+	  
   public String toString() {
     return FieldName + ':' + FieldValue.toString();
     }

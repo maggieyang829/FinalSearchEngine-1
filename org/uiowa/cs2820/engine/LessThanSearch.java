@@ -2,16 +2,19 @@ package org.uiowa.cs2820.engine;
 
 public class LessThanSearch implements Search{
 
-	Field f;
+	Field target;
+	Database D;
 	
 	public LessThanSearch(Field f){
-		this.f = f;
+		D = new LinearDiskDatabase();
+		target = f;
 	}
 	
 	@Override
 	public String[] doSearch() {
-		// TODO Auto-generated method stub
-		return null;
+		String [] R = D.fetch(target);
+		if (R == null) R = new String[0];
+		return R;
 	}
 
 }

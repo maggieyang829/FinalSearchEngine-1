@@ -11,8 +11,7 @@ import java.util.Map;
 
 import org.junit.Test;
 
-public class GreaterThanSearchTest {
-	
+public class LessThanSearchTest {
 	
 	@Test
 	public void setup() {	
@@ -60,7 +59,5 @@ public class GreaterThanSearchTest {
 		assertEquals(S.length,3);
 		for (String s: S) System.out.println(s);
 	    } 
-	  
-
 
 }
