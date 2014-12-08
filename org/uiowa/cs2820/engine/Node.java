@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 // local Traverser to find a Node with given Field
-class SearchField implements Traverser {
+/*class SearchField implements Traverser {
   Field f = null;
   Node h = null;
   public SearchField( Field x ) { f = x; } 
@@ -16,7 +16,7 @@ class SearchField implements Traverser {
       }
     return true;
     }
-  }
+  }*/
 
 // local Traverser to find remove Id from all nodes
 class IdRemover implements Traverser {
@@ -93,7 +93,8 @@ public class Node implements Item, Serializable {
   // find existing node that has field equal to given value
   public static Node findNode(Field f) {
     setup();
-    SearchField S = new SearchField(f);  // make custom traverser 
+    //SearchField S = new SearchField(f);  // make custom traverser 
+    FieldSearch S = new FieldSearch(f);
     D.traverse(S);  // go through the linked list
     return S.h;     // either null or the found Node
     }

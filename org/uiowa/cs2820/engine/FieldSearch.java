@@ -1,7 +1,10 @@
 package org.uiowa.cs2820.engine;
 
-public class FieldSearch implements Search {
-  Field target;
+import java.util.ArrayList;
+
+public class FieldSearch implements Traverser {
+  Field target = null;
+  Node h = null;
   Database D;
   public FieldSearch(Field f) { 
 	D = new LinearDiskDatabase();
@@ -14,4 +17,12 @@ public class FieldSearch implements Search {
 	return R;
 	}
   
+  public boolean process(Item I) { 
+	    Node F = (Node) I;  // we are traversing Nodes 
+	    if (F.Key.equals(target)) {
+	      h = F; // remember this node
+	      return false;  // stop traversing; 
+	    }
+	    return true;
+  }
 }
