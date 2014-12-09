@@ -1,11 +1,12 @@
 package org.uiowa.cs2820.engine;
-import java.util.Iterator;
+import java.util.*;
 
 @SuppressWarnings("hiding")
 public class ArrayListIterator<ArrayList> implements Iterator<String>{
 
-	public Iterator<String> iterator() {
-		return this.iterator();
+	public Iterator<String> iterator(String[] args) {
+		List<String> words = Arrays.asList(args);
+		return words.iterator();
 	}
 	
 	@Override

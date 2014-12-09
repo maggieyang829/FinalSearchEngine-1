@@ -1,6 +1,7 @@
 package org.uiowa.cs2820.engine;
-
 import java.util.ArrayList;
+
+import org.uiowa.cs2820.engine.ArrayListIterator;
 
 public class FieldSearch extends Traverser {
   Field target = null;
@@ -12,10 +13,13 @@ public class FieldSearch extends Traverser {
 	target = f; 
 	}
   
-  public String[] doSearch() {
+  public ArrayListIterator<String> doSearch() {
 	String [] R = D.fetch(this);
 	if (R == null) R = new String[0];
-	return R;
+	@SuppressWarnings("rawtypes")
+	ArrayListIterator<ArrayList> A = new ArrayListIterator<ArrayList>();
+	ArrayListIterator<String> I = (ArrayListIterator<String>) A.iterator(R);
+	return I;
 	}
   
   public boolean process(Item I) { 
