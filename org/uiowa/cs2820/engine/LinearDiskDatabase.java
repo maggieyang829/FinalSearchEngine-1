@@ -19,18 +19,20 @@ public class LinearDiskDatabase implements Database {
 
 	    ArrayList<Node> n = Node.findNodeLst(f);
 	    
+	    System.out.println("arraylist length: "+n.size());
+	  //  System.out.println("They are: "+ n.get(0).Key.getFieldName());
 	    if (n == null) return new String[0];
 	    String[] first = Identifier.getAllIds((n.get(0)).identlist);
 	    if(n.size() == 1) return first;
-	        
-	    Set<String> idSet = new HashSet<String>(Arrays.asList(first));
-	    
+
+	    Set<String> idSet = new HashSet<String>(Arrays.asList(first));	    
 	    for(int i=1; i<n.size();i++){
 	    	String[] arr = Identifier.getAllIds((n.get(i)).identlist);
 	    	Set<String> moreSet = new HashSet<String>(Arrays.asList(arr));
 	    	idSet.addAll(moreSet);
 	    }
-	    return (String[]) idSet.toArray();
+	     
+	    return idSet.toArray(new String[idSet.size()]);
 	    }
 
 

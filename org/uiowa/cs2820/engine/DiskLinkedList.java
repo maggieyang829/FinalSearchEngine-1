@@ -77,7 +77,7 @@ public class DiskLinkedList {
     int next = D.getNext();
     while (carry && next >= 0) {
       D = (Item) Utility.revert( DiskSpace.read(next) ); 
-      carry = T.process(D); 
+      carry = T.process(D);
       next = D.getNext();
       }
     }

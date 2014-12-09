@@ -4,19 +4,50 @@ import java.util.*;
 import java.io.*;
 
 // local Traverser to find a Node with given Field
-/*class SearchField implements Traverser {
+class SearchField extends Traverser {
   Field f = null;
   Node h = null;
-  public SearchField( Field x ) { f = x; } 
+  ArrayList<Node> hLst;
+  public SearchField( Field x ) { 
+	  f = x; 
+	//  hLst = new ArrayList<Node>();
+	  } 
   public boolean process(Item I) { 
     Node F = (Node) I;  // we are traversing Nodes 
     if (F.Key.equals(f)) {
       h = F; // remember this node
+      if(hLst==null) hLst = new ArrayList<Node>();
+      hLst.add(F);
       return false;  // stop traversing; 
       }
     return true;
     }
-  }*/
+  public ArrayList<Node> getLst(){
+	  return hLst;
+  }
+  }
+
+class SearchGreater extends Traverser {
+	  Field f = null;
+	  ArrayList<Node> hLst;
+	  public SearchGreater( Field x ) { 
+		  f = x; 
+		  hLst = new ArrayList<Node>();
+	  } 
+	  public boolean process(Item I) {
+		Node F = (Node) I; 
+		String itemValue = (String) F.Key.getFieldValue();
+		String fieldValue = (String) f.getFieldValue();
+		   if (F.Key.getFieldName().equals(f.getFieldName())
+		    	&& itemValue.compareTo(fieldValue)>0) {
+		    hLst.add(F);
+		    }
+			return true;
+		}
+	  public ArrayList<Node> getLst(){
+		  return hLst;
+	  }
+	  }
 
 // local Traverser to find remove Id from all nodes
 class IdRemover extends Traverser {
@@ -93,8 +124,7 @@ public class Node implements Item, Serializable {
   // find existing node that has field equal to given value
   public static Node findNode(Field f) {
     setup();
-    //SearchField S = new SearchField(f);  // make custom traverser 
-    FieldSearch S = new FieldSearch(f);
+    SearchField S = new SearchField(f);  // make custom traverser 
     D.traverse(S);  // go through the linked list
     return S.h;     // either null or the found Node
     }
@@ -124,8 +154,8 @@ public class Node implements Item, Serializable {
   public static ArrayList<Node> findNodeLst(Traverser S) {
 	    setup();
 	    D.traverse(S);  // go through the linked list
-	    return S.getLst();     // either null or the found Node
-	    }
-  
+	    return S.getLst();     
   }
+  
+}
 
