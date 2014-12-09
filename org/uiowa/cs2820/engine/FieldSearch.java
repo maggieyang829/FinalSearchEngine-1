@@ -13,7 +13,7 @@ public class FieldSearch extends Traverser {
 	}
   
   public String[] doSearch() {
-	String [] R = D.fetch(target);
+	String [] R = D.fetch(this);
 	if (R == null) R = new String[0];
 	return R;
 	}

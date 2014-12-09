@@ -1,6 +1,9 @@
 package org.uiowa.cs2820.engine;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class LinearDiskDatabase implements Database {
 
@@ -13,15 +16,21 @@ public class LinearDiskDatabase implements Database {
 	    }
 	  
 	  public String[] fetch(Traverser f) {
-		  ArrayList<String> lst = null;
+
 	    ArrayList<Node> n = Node.findNodeLst(f);
-	    if (n == null) return new String[0];
-	    if(n.size() == 1) return Identifier.getAllIds((n.get(0)).identlist);
 	    
-	    for(int i=0; i<n.size();i++){
-	    	
+	    if (n == null) return new String[0];
+	    String[] first = Identifier.getAllIds((n.get(0)).identlist);
+	    if(n.size() == 1) return first;
+	        
+	    Set<String> idSet = new HashSet<String>(Arrays.asList(first));
+	    
+	    for(int i=1; i<n.size();i++){
+	    	String[] arr = Identifier.getAllIds((n.get(i)).identlist);
+	    	Set<String> moreSet = new HashSet<String>(Arrays.asList(arr));
+	    	idSet.addAll(moreSet);
 	    }
-	    return lst.toArray(new String[lst.size()]);
+	    return (String[]) idSet.toArray();
 	    }
 
 

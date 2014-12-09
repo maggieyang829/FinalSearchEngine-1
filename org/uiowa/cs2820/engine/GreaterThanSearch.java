@@ -16,7 +16,7 @@ public class GreaterThanSearch extends Traverser{
 
 
 	public String[] doSearch() {
-		String [] R = D.fetch(target);
+		String [] R = D.fetch(this);
 		if (R == null) R = new String[0];
 		return R;
 	}
@@ -30,6 +30,10 @@ public class GreaterThanSearch extends Traverser{
 	    	fieldLst.add(F);
 	    }
 		return true;
+	}
+	
+	public ArrayList<Node> getLst(){
+		return fieldLst;
 	}
 	
 	//this is only for test and debugging

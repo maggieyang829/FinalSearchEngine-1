@@ -19,7 +19,7 @@ class localnode implements Item, Serializable {
   }
 
 // for testing, a class to sum over all in list
-class sum implements Traverser {
+class sum extends Traverser {
   int total;
   public sum() { total = 0; } 
   public boolean process(Item I) {
