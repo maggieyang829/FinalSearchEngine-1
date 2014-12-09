@@ -13,7 +13,6 @@ public class PrefixSearch extends Search {
 		target = F;
 	}
 
-	@Override
 	public String[] doSearch() {
 		SearchPrefix P = new SearchPrefix(target);
 		String[] Result = D.fetch(P);
