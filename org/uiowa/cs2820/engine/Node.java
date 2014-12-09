@@ -7,7 +7,7 @@ import java.io.*;
 class SearchField extends Traverser {
   Field f = null;
   Node h = null;
-  ArrayList<Node> hitList;
+  ArrayList<Node> hLst;
   public SearchField( Field x ) { 
 	  f = x; 
 	//  hLst = new ArrayList<Node>();
@@ -16,14 +16,14 @@ class SearchField extends Traverser {
     Node F = (Node) I;  // we are traversing Nodes 
     if (F.Key.equals(f)) {
       h = F; // remember this node
-      if(hitList==null) hitList = new ArrayList<Node>();
-      hitList.add(F);
+      if(hLst==null) hLst = new ArrayList<Node>();
+      hLst.add(F);
       return false;  // stop traversing; 
       }
     return true;
     }
   public ArrayList<Node> getLst(){
-	  return hitList;
+	  return hLst;
   }
   }
 
