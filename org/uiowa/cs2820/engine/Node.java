@@ -49,6 +49,30 @@ class SearchGreater extends Traverser {
 	  }
 	  }
 
+// less than search
+class SearchLess extends Traverser {
+	  Field f = null;
+	  ArrayList<Node> hLst;
+	  public SearchLess( Field x ) { 
+		  f = x; 
+		  hLst = new ArrayList<Node>();
+	  } 
+	  // compareTo would return a negative integer if <
+	  public boolean process(Item I) {
+		Node F = (Node) I; 
+		String itemValue = (String) F.Key.getFieldValue();
+		String fieldValue = (String) f.getFieldValue();
+		   if (F.Key.getFieldName().equals(f.getFieldName())
+		    	&& itemValue.compareTo(fieldValue)<0) {
+		    hLst.add(F);
+		    }
+			return true;
+		}
+	  public ArrayList<Node> getLst(){
+		  return hLst;
+	  }
+	  }
+
 // local Traverser to find remove Id from all nodes
 class IdRemover extends Traverser {
   ArrayList<Node> empties;  // an array of nodes with no Ids
