@@ -4,9 +4,10 @@ import java.util.*;
 @SuppressWarnings("hiding")
 public class ArrayListIterator<ArrayList> implements Iterator<String>{
 
-	public Iterator<String> iterator(String[] args) {
+	@SuppressWarnings("unchecked")
+	public ArrayListIterator<ArrayList> iterator(String[] args) {
 		List<String> words = Arrays.asList(args);
-		return words.iterator();
+		return (ArrayListIterator<ArrayList>) words.iterator();
 	}
 	
 	@Override

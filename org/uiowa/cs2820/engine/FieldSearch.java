@@ -13,13 +13,12 @@ public class FieldSearch extends Traverser {
 	target = f; 
 	}
   
-  public ArrayListIterator<String> doSearch() {
+@SuppressWarnings("rawtypes")
+public ArrayListIterator<ArrayList> doSearch() {
 	String [] R = D.fetch(this);
 	if (R == null) R = new String[0];
-	@SuppressWarnings("rawtypes")
 	ArrayListIterator<ArrayList> A = new ArrayListIterator<ArrayList>();
-	ArrayListIterator<String> I = (ArrayListIterator<String>) A.iterator(R);
-	return I;
+	return A.iterator(R);
 	}
   
   public boolean process(Item I) { 
