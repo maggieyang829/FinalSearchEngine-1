@@ -1,6 +1,6 @@
 package org.uiowa.cs2820.engine;
 
-import java.util.ArrayList;
+import org.uiowa.cs2820.engine.ArrayListIterator;
 
 public class FieldSearch extends Search{
   Field target;
@@ -12,10 +12,17 @@ public class FieldSearch extends Search{
 	target = f; 
 	}
   
-  public String[] doSearch() {
+
+//  public String[] doSearch() {
+//	SearchField S = new SearchField(target);
+//	String [] R = D.fetch(S);
+
+public String[] doSearch() {
 	SearchField S = new SearchField(target);
+
 	String [] R = D.fetch(S);
 	if (R == null) R = new String[0];
+	//ArrayListIterator<String> A = new ArrayListIterator<String>(R);
 	return R;
 	}
   

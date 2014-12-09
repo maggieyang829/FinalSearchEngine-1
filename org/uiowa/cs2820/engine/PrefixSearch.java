@@ -1,6 +1,6 @@
 package org.uiowa.cs2820.engine;
 
-public class PrefixSearch implements Search {
+public class PrefixSearch implements Traverser,Search {
 
 	Field field;
 	Database D;
@@ -31,4 +31,10 @@ public class PrefixSearch implements Search {
 		return S.h;     // either null or the found Node
 	}
 /*/
+
+	@Override
+	public boolean process(Item I) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

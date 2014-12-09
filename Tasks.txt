@@ -33,3 +33,8 @@ LOG
 	bounce ideas off of each other during this process.
 12/6 S: Mary added 
 >>>>>>> FETCH_HEAD
+
+12/8: Group meets to discuss structure for searches. Group decides Mary and Xiaomeng will focus on
+	restructuring, while Austin and Khashi will focus on other things. Mary and Xiaomeng restructure searches 
+	while Austin begins to research REST'
+12/9: Austin spends an hour and a half before finally installing Maven. Austin feels accomplished.
