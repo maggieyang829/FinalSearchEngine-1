@@ -2,17 +2,16 @@ package org.uiowa.cs2820.engine;
 
 import java.util.ArrayList;
 
-public class GreaterThanSearch implements Traverser{
-	
+public class GreaterThanSearch extends Traverser{
+	ArrayList<Node> fieldLst;
 	Field target;
 	//Node h;
-	ArrayList<Field> fieldLst;
 	Database D;
 	
 	public GreaterThanSearch(Field f){
 		D = new LinearDiskDatabase();
 		target = f;
-		fieldLst = null;
+		fieldLst = new ArrayList<Node>();
 	}
 
 
@@ -28,7 +27,7 @@ public class GreaterThanSearch implements Traverser{
 		String fieldValue = (String) target.getFieldValue();
 	    if (F.Key.getFieldName().equals(target.getFieldName())
 	    		&& itemValue.compareTo(fieldValue)>0) {
-	    	fieldLst.add(F.Key);
+	    	fieldLst.add(F);
 	    }
 		return true;
 	}

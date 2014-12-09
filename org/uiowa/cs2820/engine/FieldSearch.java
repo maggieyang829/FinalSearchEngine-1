@@ -2,9 +2,10 @@ package org.uiowa.cs2820.engine;
 
 import java.util.ArrayList;
 
-public class FieldSearch implements Traverser {
+public class FieldSearch extends Traverser {
   Field target = null;
-  Node h = null;
+  Node h;
+  //ArrayList<Node> hlst = new ArrayList<Node>();
   Database D;
   public FieldSearch(Field f) { 
 	D = new LinearDiskDatabase();

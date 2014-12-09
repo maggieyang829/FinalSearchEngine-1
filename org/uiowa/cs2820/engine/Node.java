@@ -19,7 +19,7 @@ import java.io.*;
   }*/
 
 // local Traverser to find remove Id from all nodes
-class IdRemover implements Traverser {
+class IdRemover extends Traverser {
   ArrayList<Node> empties;  // an array of nodes with no Ids
   String identifier;        // identifier to remove
   public IdRemover( String id ) {
@@ -120,6 +120,12 @@ public class Node implements Item, Serializable {
   public String toString() {
     return "Node at " + location + " next = " + next + " field " + Key;
     }
+  
+  public static ArrayList<Node> findNodeLst(Traverser S) {
+	    setup();
+	    D.traverse(S);  // go through the linked list
+	    return S.getLst();     // either null or the found Node
+	    }
   
   }
 
