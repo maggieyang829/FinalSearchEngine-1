@@ -8,10 +8,7 @@ class SearchField extends Traverser {
   Field f = null;
   Node h = null;
   ArrayList<Node> hLst;
-  public SearchField( Field x ) { 
-	  f = x; 
-	//  hLst = new ArrayList<Node>();
-	  } 
+  public SearchField( Field x ) {f = x;} 
   public boolean process(Item I) { 
     Node F = (Node) I;  // we are traversing Nodes 
     if (F.Key.equals(f)) {
@@ -40,6 +37,28 @@ class SearchGreater extends Traverser {
 		String fieldValue = (String) f.getFieldValue();
 		   if (F.Key.getFieldName().equals(f.getFieldName())
 		    	&& itemValue.compareTo(fieldValue)>0) {
+		    hLst.add(F);
+		    }
+			return true;
+		}
+	  public ArrayList<Node> getLst(){
+		  return hLst;
+	  }
+	  }
+
+class SearchLess extends Traverser {
+	  Field f = null;
+	  ArrayList<Node> hLst;
+	  public SearchLess( Field x ) { 
+		  f = x; 
+		  hLst = new ArrayList<Node>();
+	  } 
+	  public boolean process(Item I) {
+		Node F = (Node) I; 
+		String itemValue = (String) F.Key.getFieldValue();
+		String fieldValue = (String) f.getFieldValue();
+		   if (F.Key.getFieldName().equals(f.getFieldName())
+		    	&& itemValue.compareTo(fieldValue)<0) {
 		    hLst.add(F);
 		    }
 			return true;

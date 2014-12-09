@@ -19,7 +19,7 @@ public class LinearDiskDatabase implements Database {
 
 	    ArrayList<Node> n = Node.findNodeLst(f);
 	    
-	    System.out.println("arraylist length: "+n.size());
+	  //  System.out.println("arraylist length: "+n.size());
 	  //  System.out.println("They are: "+ n.get(0).Key.getFieldName());
 	    if (n == null) return new String[0];
 	    String[] first = Identifier.getAllIds((n.get(0)).identlist);

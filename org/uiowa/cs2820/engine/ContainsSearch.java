@@ -1,6 +1,6 @@
 package org.uiowa.cs2820.engine;
 
-public class ContainsSearch implements Search {
+public class ContainsSearch extends Search {
 
 	Field target;
 	Database D;

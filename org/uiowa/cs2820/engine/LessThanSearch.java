@@ -1,6 +1,6 @@
 package org.uiowa.cs2820.engine;
 
-public class LessThanSearch implements Search{
+public class LessThanSearch extends Search{
 
 	Field target;
 	Database D;
@@ -12,7 +12,8 @@ public class LessThanSearch implements Search{
 	
 	@Override
 	public String[] doSearch() {
-		String [] R = D.fetch(target);
+		SearchLess S = new SearchLess(target);
+		String [] R = D.fetch(S);
 		if (R == null) R = new String[0];
 		return R;
 	}

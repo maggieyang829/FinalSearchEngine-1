@@ -1,6 +1,6 @@
 package org.uiowa.cs2820.engine;
 
-public class ComboSearch implements Search {
+public class ComboSearch extends Search {
 	Search obj1;
 	Search obj2;
 	String s;			// s = "and" or "or"

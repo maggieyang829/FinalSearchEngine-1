@@ -11,8 +11,7 @@ import java.util.Map;
 
 import org.junit.Test;
 
-public class GreaterThanSearchTest {
-	
+public class GreaterThanSearchTest {	
 	
 	@Test
 	public void setup() {	
