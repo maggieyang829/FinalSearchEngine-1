@@ -4,10 +4,12 @@ import java.util.*;
 @SuppressWarnings("hiding")
 public class ArrayListIterator<String> implements Iterator<String>{
 	Iterator<String> I;
+	String[] S;
 	int current;
 	int next;
 	int size;
-	public ArrayListIterator(String[] S) {
+	public ArrayListIterator(String[] s) {
+		this.S = s;
 		List<String> words = Arrays.asList(S);
 		this.size = words.size();
 		this.I = (ArrayListIterator<String>) words.iterator();
@@ -15,15 +17,13 @@ public class ArrayListIterator<String> implements Iterator<String>{
 	
 	@Override
 	public boolean hasNext() {
-		for(int i = current+1; i < size; i++) {
-			// TODO
-		}
-		return false;
+		return next() != null;
 	}
 
 	@Override
 	public String next() {
-		// TODO Auto-generated method stub
+		if(!hasNext()){throw new NoSuchElementException();}
+		// TODO
 		return null;
 	}
 	
