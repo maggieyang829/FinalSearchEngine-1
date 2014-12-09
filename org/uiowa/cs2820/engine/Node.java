@@ -7,7 +7,7 @@ import java.io.*;
 class SearchField extends Traverser {
   Field f = null;
   Node h = null;
-  ArrayList<Node> hLst;
+  ArrayList<Node> hitList;
   public SearchField( Field x ) { 
 	  f = x; 
 	//  hLst = new ArrayList<Node>();
@@ -16,23 +16,23 @@ class SearchField extends Traverser {
     Node F = (Node) I;  // we are traversing Nodes 
     if (F.Key.equals(f)) {
       h = F; // remember this node
-      if(hLst==null) hLst = new ArrayList<Node>();
-      hLst.add(F);
+      if(hitList==null) hitList = new ArrayList<Node>();
+      hitList.add(F);
       return false;  // stop traversing; 
       }
     return true;
     }
   public ArrayList<Node> getLst(){
-	  return hLst;
+	  return hitList;
   }
   }
 
 class SearchGreater extends Traverser {
 	  Field f = null;
-	  ArrayList<Node> hLst;
+	  ArrayList<Node> hitList;
 	  public SearchGreater( Field x ) { 
 		  f = x; 
-		  hLst = new ArrayList<Node>();
+		  hitList = new ArrayList<Node>();
 	  } 
 	  public boolean process(Item I) {
 		Node F = (Node) I; 
@@ -40,15 +40,16 @@ class SearchGreater extends Traverser {
 		String fieldValue = (String) f.getFieldValue();
 		   if (F.Key.getFieldName().equals(f.getFieldName())
 		    	&& itemValue.compareTo(fieldValue)>0) {
-		    hLst.add(F);
+		    hitList.add(F);
 		    }
 			return true;
 		}
 	  public ArrayList<Node> getLst(){
-		  return hLst;
+		  return hitList;
 	  }
 	  }
 
+<<<<<<< HEAD
 // less than search
 class SearchLess extends Traverser {
 	  Field f = null;
@@ -65,13 +66,39 @@ class SearchLess extends Traverser {
 		   if (F.Key.getFieldName().equals(f.getFieldName())
 		    	&& itemValue.compareTo(fieldValue)<0) {
 		    hLst.add(F);
+=======
+class SearchPrefix extends Traverser {
+	Field field = null;
+	ArrayList<Node> hitList;
+	
+	public SearchPrefix( Field x ) {
+		field = x;
+		hitList = new ArrayList<Node>();
+	}
+	@Override
+	public boolean process(Item I) {
+		Node F = (Node) I;
+		String itemValue = (String) F.Key.getFieldValue();
+		String fieldValue = (String) field.getFieldValue();
+			if (F.Key.getFieldName().equals(field.getFieldName())
+				&& fieldValue.startsWith(itemValue)){
+		    hitList.add(F);
+>>>>>>> FETCH_HEAD
 		    }
 			return true;
 		}
 	  public ArrayList<Node> getLst(){
+<<<<<<< HEAD
 		  return hLst;
 	  }
 	  }
+=======
+		  return hitList;
+	  }
+}
+	
+
+>>>>>>> FETCH_HEAD
 
 // local Traverser to find remove Id from all nodes
 class IdRemover extends Traverser {
