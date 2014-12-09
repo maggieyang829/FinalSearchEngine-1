@@ -2,17 +2,22 @@ package org.uiowa.cs2820.engine;
 import java.util.*;
 
 @SuppressWarnings("hiding")
-public class ArrayListIterator<ArrayList> implements Iterator<String>{
-
-	@SuppressWarnings("unchecked")
-	public ArrayListIterator<ArrayList> iterator(String[] args) {
-		List<String> words = Arrays.asList(args);
-		return (ArrayListIterator<ArrayList>) words.iterator();
+public class ArrayListIterator<String> implements Iterator<String>{
+	Iterator<String> I;
+	int current;
+	int next;
+	int size;
+	public ArrayListIterator(String[] S) {
+		List<String> words = Arrays.asList(S);
+		this.size = words.size();
+		this.I = (ArrayListIterator<String>) words.iterator();
 	}
 	
 	@Override
 	public boolean hasNext() {
-		// TODO Auto-generated method stub
+		for(int i = current+1; i < size; i++) {
+			// TODO
+		}
 		return false;
 	}
 
