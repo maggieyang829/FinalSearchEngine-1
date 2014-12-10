@@ -30,63 +30,63 @@ public class IntegrationTest {
 	assertEquals(S.length,1);
 	}
 
- // @Test
-//  public void test1() {	
-//	CheckPoint.reset();
-//	DiskSpace.reset();
-//	// load some dummy data from a testing file
-//	HashMap<String,ArrayList<Field>> H = new HashMap<String,ArrayList<Field>>();
-//	String CurrentIndex = null;
-//	ArrayList<Field> CurrentFields = null;
-// 	try {
-//	  BufferedReader B = new BufferedReader(new FileReader("Resources/fielddata.txt"));
-//	  String line;
-//	  String[] tokens;
-//	  // NOTE: has a bug (EOF not handled well); use extra fake input line at end
-//	  while ((line = B.readLine()) != null) {
-//		tokens = line.split("\\s+");
-//		if (CurrentIndex == null || !CurrentIndex.equals(tokens[0])) {
-//		  if (CurrentIndex != null) H.put(CurrentIndex,CurrentFields);
-//		  CurrentIndex = tokens[0];
-//		  CurrentFields = new ArrayList<Field>();
-//		  }
-//		CurrentFields.add(new Field(tokens[1],tokens[2]));
-//		}
-//	  B.close();
-//	  }
-//	catch (Exception e) { }
-//	// put dummy data into the database
-//	Iterator I = H.entrySet().iterator();
-//	while (I.hasNext()) {
-//	  Map.Entry pairs = (Map.Entry)I.next();
-//	  Indexer N = new Indexer((String)pairs.getKey());
-//	  CurrentFields = (ArrayList<Field>)pairs.getValue();
-//	  for (Field f: CurrentFields) {
-//	    N.addField(f);
-//	    // System.out.println("Added "+N+' '+f);
-//	    }
-//	  }
-//    }
+    @Test
+    public void test1() {	
+ 	CheckPoint.reset();
+	DiskSpace.reset();
+	// load some dummy data from a testing file
+	HashMap<String,ArrayList<Field>> H = new HashMap<String,ArrayList<Field>>();
+	String CurrentIndex = null;
+	ArrayList<Field> CurrentFields = null;
+ 	try {
+	  BufferedReader B = new BufferedReader(new FileReader("Resources/fielddata.txt"));
+	  String line;
+	  String[] tokens;
+	  // NOTE: has a bug (EOF not handled well); use extra fake input line at end
+	  while ((line = B.readLine()) != null) {
+		tokens = line.split("\\s+");
+		if (CurrentIndex == null || !CurrentIndex.equals(tokens[0])) {
+		  if (CurrentIndex != null) H.put(CurrentIndex,CurrentFields);
+		  CurrentIndex = tokens[0];
+		  CurrentFields = new ArrayList<Field>();
+		  }
+		CurrentFields.add(new Field(tokens[1],tokens[2]));
+		}
+	  B.close();
+	  }
+	catch (Exception e) { }
+	// put dummy data into the database
+	Iterator I = H.entrySet().iterator();
+	while (I.hasNext()) {
+	  Map.Entry pairs = (Map.Entry)I.next();
+	  Indexer N = new Indexer((String)pairs.getKey());
+	  CurrentFields = (ArrayList<Field>)pairs.getValue();
+	  for (Field f: CurrentFields) {
+	    N.addField(f);
+	    // System.out.println("Added "+N+' '+f);
+	    }
+	  }
+    }
   
-//  @Test
-//  public void test2() {	
-//	Field f = new Field("golden","rumex");
-//	FieldSearch F = new FieldSearch(f);
-//	String[] S = F.doSearch();
-//	assertEquals(S.length,1);
-//	assertTrue(Arrays.asList(S).contains("2.txt"));
-//	f = new Field("not","riparia");
-//	F = new FieldSearch(f);
-//	S = F.doSearch();
-//	assertTrue(Arrays.asList(S).contains("1.txt"));
-//    }
-//  
-//  @Test
-//  public void test3() {
-//	Field f = new Field("many","times");
-//	FieldSearch F = new FieldSearch(f);
-//	String [] S = F.doSearch();
-//	assertEquals(S.length,30);
-//	for (String s: S) System.out.println(s);
-//    } 
+    @Test
+    public void test2() {	
+	Field f = new Field("golden","rumex");
+	FieldSearch F = new FieldSearch(f);
+	String[] S = F.doSearch();
+	assertEquals(S.length,1);
+	assertTrue(Arrays.asList(S).contains("2.txt"));
+	f = new Field("not","riparia");
+	F = new FieldSearch(f);
+	S = F.doSearch();
+	assertTrue(Arrays.asList(S).contains("1.txt"));
+    }
+  
+    @Test
+    public void test3() {
+	Field f = new Field("many","times");
+	FieldSearch F = new FieldSearch(f);
+	String [] S = F.doSearch();
+	assertEquals(S.length,30);
+	for (String s: S) System.out.println(s);
+    } 
   }

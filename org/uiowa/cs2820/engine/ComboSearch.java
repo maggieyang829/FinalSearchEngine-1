@@ -1,5 +1,9 @@
 package org.uiowa.cs2820.engine;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 public class ComboSearch extends Search {
 	Search obj1;
 	Search obj2;
@@ -20,7 +24,28 @@ public class ComboSearch extends Search {
 	
 	public String[] orSearch(){
 		
-		return null;
+		// declare string arrays ids1, ids2
+		String[] ids1 = null;
+		String[] ids2 = null;
+		String[] result = null;
+		
+		// perform searches
+		ids1 = this.obj1.doSearch();
+		ids2 = this.obj2.doSearch();
+		
+		// declare Hashsets to find union
+		Set<String> set1 = new HashSet<String>(Arrays.asList(ids1));
+		Set<String> set2 = new HashSet<String>(Arrays.asList(ids2));
+		Set<String> union = new HashSet<String>(set1);
+		
+		// find union
+		union.addAll(set2);
+		
+		// convert back into string array to return
+		result = union.toArray(new String[union.size()]);
+		
+		return result;
+		
 	}
 	
 	/*
@@ -40,8 +65,18 @@ public class ComboSearch extends Search {
 	 */
 	@Override
 	public String[] doSearch() {
-		// TODO Auto-generated method stub
-		return null;
+		String[] result = null;
+		// check if orSearch or andSearch
+		if ( this.s == "or" ) {
+			result = this.orSearch();
+		}
+		else if ( this.s == "and" ) {
+			result = this.andSearch();
+		}
+		else {
+			System.out.println("Specify 'and' or 'or' search");
+		}
+		return result;
 	}
 	
 	public String toString() {

@@ -53,17 +53,17 @@ public class ComboSearchTest {
 	    }
 	
 	// test for orSearch
-	// returns identifiers that have Field = ("Car", "average")
+	// returns identifiers that have Field = ("Car", "truck")
 	// or Field < ("Part","axle")
 	@Test
 	public void test1() {
-		Field f = new Field("Car", "average");
+		Field f = new Field("Car", "truck");
 		FieldSearch F = new FieldSearch(f);
 		Field g = new Field("Part","axle");
 		LessThanSearch G = new LessThanSearch(g);
 		ComboSearch C = new ComboSearch(F, G, "or");
 		String [] S = C.doSearch();
-		assertEquals(S.length,6);
+		assertEquals(S.length,5);
 		for (String s: S) System.out.println(s);
 	    } 
 	
@@ -75,7 +75,7 @@ public class ComboSearchTest {
 		Field f = new Field("Part","axle");
 		FieldSearch F = new FieldSearch(f);
 		Field g = new Field("Part","gear");
-		FieldSearch G = new FieldSearch(g);
+		GreaterThanSearch G = new GreaterThanSearch(g);
 		ComboSearch C = new ComboSearch(F, G, "and");
 		String [] S = C.doSearch();
 		assertEquals(S.length,3);
