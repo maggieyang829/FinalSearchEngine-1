@@ -7,7 +7,7 @@ import java.io.*;
 class SearchField extends Traverser {
   Field f = null;
   Node h = null;
-  ArrayList<Node> hitList;
+  ArrayList<Node> hLst;
   public SearchField( Field x ) { 
 	  f = x; 
 	//  hLst = new ArrayList<Node>();
@@ -16,14 +16,14 @@ class SearchField extends Traverser {
     Node F = (Node) I;  // we are traversing Nodes 
     if (F.Key.equals(f)) {
       h = F; // remember this node
-      if(hitList==null) hitList = new ArrayList<Node>();
-      hitList.add(F);
+      if(hLst==null) hLst = new ArrayList<Node>();
+      hLst.add(F);
       return false;  // stop traversing; 
       }
     return true;
     }
   public ArrayList<Node> getLst(){
-	  return hitList;
+	  return hLst;
   }
   }
 
@@ -64,6 +64,29 @@ class SearchPrefix extends Traverser {
 		String fieldValue = (String) field.getFieldValue();
 			if (F.Key.getFieldName().equals(field.getFieldName())
 				&& fieldValue.startsWith(itemValue)){
+		    hitList.add(F);
+		    }
+			return true;
+		}
+	  public ArrayList<Node> getLst(){
+		  return hitList;
+	  }
+}
+class SearchSuffix extends Traverser {
+	Field field = null;
+	ArrayList<Node> hitList;
+	
+	public SearchSuffix( Field x ) {
+		field = x;
+		hitList = new ArrayList<Node>();
+	}
+	@Override
+	public boolean process(Item I) {
+		Node F = (Node) I;
+		String itemValue = (String) F.Key.getFieldValue();
+		String fieldValue = (String) field.getFieldValue();
+			if (F.Key.getFieldName().equals(field.getFieldName())
+				&& fieldValue.endsWith(itemValue)){
 		    hitList.add(F);
 		    }
 			return true;

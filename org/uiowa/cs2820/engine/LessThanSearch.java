@@ -1,6 +1,6 @@
 package org.uiowa.cs2820.engine;
 
-public class LessThanSearch implements Search{
+public class LessThanSearch extends Search{
 
 	Field target;
 	Database D;
