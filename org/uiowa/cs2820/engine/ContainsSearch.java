@@ -1,5 +1,6 @@
 package org.uiowa.cs2820.engine;
 
+
 import java.util.ArrayList;
 
 public class ContainsSearch extends Search {

@@ -1,16 +1,13 @@
 package org.uiowa.cs2820.engine;
 
-import java.util.ArrayList;
-
 public class PrefixSearch extends Search {
 
-	ArrayList<Node> fieldList;
-	Field target;
+	Field field;
 	Database D;
 	
 	public PrefixSearch(Field F) {
 		D = new LinearDiskDatabase();
-		target = F;
+		field = F;
 	}
 
 <<<<<<< HEAD
@@ -18,10 +15,12 @@ public class PrefixSearch extends Search {
 =======
 >>>>>>> FETCH_HEAD
 	public String[] doSearch() {
-		SearchPrefix P = new SearchPrefix(target);
-		String[] Result = D.fetch(P);
-		if ( Result == null) return new String[0];
-		return Result;
+		SearchPrefix S = new SearchPrefix(target);
+		String [] R = D.fetch(S);
+		if (R == null) R = new String[0];
+		//ArrayListIterator<String> A = new ArrayListIterator<String>(R);
+		return R;
+		return null;
 	}
-	
+
 }

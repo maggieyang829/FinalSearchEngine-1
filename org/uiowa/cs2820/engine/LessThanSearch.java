@@ -12,7 +12,8 @@ public class LessThanSearch extends Search{
 	
 	@Override
 	public String[] doSearch() {
-		String [] R = D.fetch(target);
+		SearchLess S = new SearchLess(target);
+		String [] R = D.fetch(S);
 		if (R == null) R = new String[0];
 		return R;
 	}

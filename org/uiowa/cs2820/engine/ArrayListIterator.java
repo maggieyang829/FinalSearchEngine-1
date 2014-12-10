@@ -4,27 +4,18 @@ import java.util.*;
 @SuppressWarnings("hiding")
 public class ArrayListIterator<String> implements Iterator<String>{
 	Iterator<String> I;
-	String[] S;
-	int current;
-	int next;
-	int size;
+	
 	public ArrayListIterator(String[] s) {
-		this.S = s;
-		List<String> words = Arrays.asList(S);
-		this.size = words.size();
-		this.I = (ArrayListIterator<String>) words.iterator();
+		I = Arrays.asList(s).iterator();
+	}
+	
+	@Override
+	public String next() {
+		return I.next();
 	}
 	
 	@Override
 	public boolean hasNext() {
-		return next() != null;
+		return I.hasNext();
 	}
-
-	@Override
-	public String next() {
-		if(!hasNext()){throw new NoSuchElementException();}
-		// TODO
-		return null;
-	}
-	
 }

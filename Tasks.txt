@@ -38,3 +38,4 @@ LOG
 	restructuring, while Austin and Khashi will focus on other things. Mary and Xiaomeng restructure searches 
 	while Austin begins to research REST'
 12/9: Austin spends an hour and a half before finally installing Maven. Austin feels accomplished.
+12/9: Khashi researches Iterator and finishes StringIterator class, and creates StringIterator test. May make future changes.
