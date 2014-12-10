@@ -19,13 +19,4 @@ public class ArrayListIteratorTest {
 		assertEquals(I.next(), "1");
 	}
 	
-	@Test
-	public void removeTest() {
-		String[] S = "a".split("");
-		ArrayListIterator<String> I = new ArrayListIterator<String>(S);
-		I.remove();
-		String[] S2 = "".split("");
-		ArrayListIterator<String> I2 = new ArrayListIterator<String>(S2);
-		assertEquals(I, I2);
-	}
 }

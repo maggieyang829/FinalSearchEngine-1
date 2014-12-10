@@ -4,6 +4,7 @@ import java.util.*;
 @SuppressWarnings("hiding")
 public class ArrayListIterator<String> implements Iterator<String>{
 	Iterator<String> I;
+	int index;
 	
 	public ArrayListIterator(String[] s) {
 		I = Arrays.asList(s).iterator();
@@ -17,10 +18,5 @@ public class ArrayListIterator<String> implements Iterator<String>{
 	@Override
 	public boolean hasNext() {
 		return I.hasNext();
-	}
-	
-	@Override
-	public void remove() {
-		I.remove();
 	}
 }
