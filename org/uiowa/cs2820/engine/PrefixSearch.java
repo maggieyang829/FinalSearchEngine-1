@@ -13,7 +13,10 @@ public class PrefixSearch extends Search {
 		target = F;
 	}
 
+<<<<<<< HEAD
 	@Override
+=======
+>>>>>>> FETCH_HEAD
 	public String[] doSearch() {
 		SearchPrefix P = new SearchPrefix(target);
 		String[] Result = D.fetch(P);
