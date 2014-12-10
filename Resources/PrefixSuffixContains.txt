@@ -1,0 +1,11 @@
+0.txt Verb Dancing 
+1.txt Noun 
+2.txt Verb Planning
+3.txt Noun
+4.txt Verb Handled
+5.txt Noun
+6.txt Verb Happened
+7.txt Noun
+8.txt Verb Curdle
+9.txt Noun
+w.txt EOF EOF
