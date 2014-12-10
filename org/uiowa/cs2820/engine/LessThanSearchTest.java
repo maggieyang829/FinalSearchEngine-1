@@ -22,7 +22,7 @@ public class LessThanSearchTest {
 		String CurrentIndex = null;
 		ArrayList<Field> CurrentFields = null;
 	 	try {
-		  BufferedReader B = new BufferedReader(new FileReader("Resources/GreaterThanTestData.txt"));
+		  BufferedReader B = new BufferedReader(new FileReader("Resources/GreaterLessThanTestData.txt"));
 		  String line;
 		  String[] tokens;
 		  // NOTE: has a bug (EOF not handled well); use extra fake input line at end
@@ -54,9 +54,9 @@ public class LessThanSearchTest {
 	@Test
 	public void test1() {
 		Field f = new Field("Part","axle");
-		GreaterThanSearch F = new GreaterThanSearch(f);
+		LessThanSearch F = new LessThanSearch(f);
 		String [] S = F.doSearch();
-		assertEquals(S.length,3);
+		assertEquals(S.length,4);
 		for (String s: S) System.out.println(s);
 	    } 
 

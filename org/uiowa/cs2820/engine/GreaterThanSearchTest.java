@@ -22,7 +22,7 @@ public class GreaterThanSearchTest {
 		String CurrentIndex = null;
 		ArrayList<Field> CurrentFields = null;
 	 	try {
-		  BufferedReader B = new BufferedReader(new FileReader("Resources/GreaterThanTestData.txt"));
+		  BufferedReader B = new BufferedReader(new FileReader("Resources/GreaterLessThanTestData.txt"));
 		  String line;
 		  String[] tokens;
 		  // NOTE: has a bug (EOF not handled well); use extra fake input line at end
