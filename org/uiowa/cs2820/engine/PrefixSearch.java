@@ -10,7 +10,6 @@ public class PrefixSearch extends Search {
 		field = F;
 	}
 
-	@Override
 	public String[] doSearch() {
 		SearchPrefix S = new SearchPrefix(target);
 		String [] R = D.fetch(S);

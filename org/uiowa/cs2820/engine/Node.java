@@ -8,7 +8,14 @@ class SearchField extends Traverser {
   Field f = null;
   Node h = null;
   ArrayList<Node> hLst;
+<<<<<<< HEAD
   public SearchField( Field x ) {f = x;} 
+=======
+  public SearchField( Field x ) { 
+	  f = x; 
+	//  hLst = new ArrayList<Node>();
+	  } 
+>>>>>>> 481a9252bdb0046f70e39f05b05ee6c7e3773140
   public boolean process(Item I) { 
     Node F = (Node) I;  // we are traversing Nodes 
     if (F.Key.equals(f)) {
@@ -67,6 +74,59 @@ class SearchLess extends Traverser {
 		  return hLst;
 	  }
 	  }
+<<<<<<< HEAD
+=======
+}
+class SearchSuffix extends Traverser {
+	Field field = null;
+	ArrayList<Node> hitList;
+	
+	public SearchSuffix( Field x ) {
+		field = x;
+		hitList = new ArrayList<Node>();
+	}
+	@Override
+	public boolean process(Item I) {
+		Node F = (Node) I;
+		String itemValue = (String) F.Key.getFieldValue();
+		String fieldValue = (String) field.getFieldValue();
+			if (F.Key.getFieldName().equals(field.getFieldName())
+				&& fieldValue.endsWith(itemValue)){
+		    hitList.add(F);
+		    }
+			return true;
+		}
+	  public ArrayList<Node> getLst(){
+		  return hitList;
+	  }
+}
+
+class SearchContains extends Traverser {
+	Field field = null;
+	ArrayList<Node> hitList;
+	
+	public SearchContains( Field x ) {
+		field = x;
+		hitList = new ArrayList<Node>();
+	}
+	@Override
+	public boolean process(Item I) {
+		Node F = (Node) I;
+		String itemValue = (String) F.Key.getFieldValue();
+		String fieldValue = (String) field.getFieldValue();
+			if (F.Key.getFieldName().equals(field.getFieldName())
+				&& fieldValue.contains(itemValue)){
+		    hitList.add(F);
+		    }
+			return true;
+		}
+	  public ArrayList<Node> getLst(){
+		  return hitList;
+	  }
+}
+	
+
+>>>>>>> 481a9252bdb0046f70e39f05b05ee6c7e3773140
 
 // local Traverser to find remove Id from all nodes
 class IdRemover extends Traverser {
