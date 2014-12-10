@@ -15,9 +15,11 @@ public class ComboSearchTest {
 	// test for orSearch
 	@Test
 	public void test1() {
-		Search f = (Search) new Field("Year","2005");
-		Search g = (Search) new Field("Feature", "swipe");
-		ComboSearch C = new ComboSearch(f, g, "or");
+		Field f = new Field("Year","2005");
+		FieldSearch F = new FieldSearch(f);
+		Field g = new Field("Feature", "swipe");
+		FieldSearch G = new FieldSearch(g);
+		ComboSearch C = new ComboSearch(F, G, "or");
 		String [] S = C.doSearch();
 		assertEquals(S.length,3);
 		for (String s: S) System.out.println(s);
@@ -26,9 +28,11 @@ public class ComboSearchTest {
 	// test for andSearch
 	@Test
 	public void test2() {
-		Search f = (Search) new Field("Year","2005");
-		Search g = (Search) new Field("Feature", "swipe");
-		ComboSearch C = new ComboSearch(f, g, "and");
+		Field f = new Field("Year","2005");
+		FieldSearch F = new FieldSearch(f);
+		Field g = new Field("Feature", "swipe");
+		FieldSearch G = new FieldSearch(g);
+		ComboSearch C = new ComboSearch(F, G, "and");
 		String [] S = C.doSearch();
 		assertEquals(S.length,3);
 		for (String s: S) System.out.println(s);
