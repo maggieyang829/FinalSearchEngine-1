@@ -39,3 +39,15 @@ LOG
 	while Austin begins to research REST'
 12/9: Austin spends an hour and a half before finally installing Maven. Austin feels accomplished.
 12/9: Khashi researches Iterator and finishes StringIterator class, and creates StringIterator test. May make future changes.
+12/9: After hours and hours of trying, Xiaomeng finally successfully figured out a design for combining all the Searches. 
+	  Our design for searches:
+	  1 Change Traverser (process) and Search (doSearch) to abstract class;
+	  2 let all the different search classes extends from Search and override its doSearch method
+	  3 Put different function classes (SearchField, SearchGreater,...)into Node.java file and let those functions
+	    extends from Traverser and override its process() and getLst()
+	  4 when doSearch calls D.fetch(Traverser t), it knows which function to perform.
+	  
+	  Xiaomeng also figured out the way to merge all the identifier lists of Node list returned by GreaterThanSearch, and passed the 
+	  integration test for equal search and GreaterthanTest for Greaterthan search, which is implemented by Mary.
+	  now that we have this design, every other searches can simply follow the way GreaterThanSearch is done.
+	  The major part is finished. Xiaomeng also feels accomplished.
