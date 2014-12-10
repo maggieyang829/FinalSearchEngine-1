@@ -4,7 +4,6 @@ import java.util.*;
 @SuppressWarnings("hiding")
 public class ArrayListIterator<String> implements Iterator<String>{
 	Iterator<String> I;
-	int index;
 	
 	public ArrayListIterator(String[] s) {
 		I = Arrays.asList(s).iterator();
