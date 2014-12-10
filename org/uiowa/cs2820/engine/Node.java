@@ -8,14 +8,9 @@ class SearchField extends Traverser {
   Field f = null;
   Node h = null;
   ArrayList<Node> hLst;
-<<<<<<< HEAD
+
   public SearchField( Field x ) {f = x;} 
-=======
-  public SearchField( Field x ) { 
-	  f = x; 
-	//  hLst = new ArrayList<Node>();
-	  } 
->>>>>>> 481a9252bdb0046f70e39f05b05ee6c7e3773140
+
   public boolean process(Item I) { 
     Node F = (Node) I;  // we are traversing Nodes 
     if (F.Key.equals(f)) {
@@ -73,10 +68,9 @@ class SearchLess extends Traverser {
 	  public ArrayList<Node> getLst(){
 		  return hLst;
 	  }
-	  }
-<<<<<<< HEAD
-=======
 }
+
+
 class SearchSuffix extends Traverser {
 	Field field = null;
 	ArrayList<Node> hitList;
@@ -125,8 +119,6 @@ class SearchContains extends Traverser {
 	  }
 }
 	
-
->>>>>>> 481a9252bdb0046f70e39f05b05ee6c7e3773140
 
 // local Traverser to find remove Id from all nodes
 class IdRemover extends Traverser {
