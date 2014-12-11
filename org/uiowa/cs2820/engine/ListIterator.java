@@ -28,13 +28,14 @@ public class ListIterator<String> implements Iterator<String>{
 	}
 	
 	public int length() {
-		int count = toArrayList().size();
+		int count = toLinkedList().size();
 		return count;
 	}
 	
-	public ArrayList<String> toArrayList() {
-		ArrayList<String> L = new ArrayList<String>();
+	public LinkedList<String> toLinkedList() {
+		LinkedList<String> L = new LinkedList<String>();
 		while(hasNext()) L.add(next());
+		I = L.iterator();
 		return L;
 	}
 }
