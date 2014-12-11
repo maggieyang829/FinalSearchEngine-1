@@ -18,5 +18,4 @@ public class PrefixSearch extends Search {
 		//ArrayListIterator<String> A = new ArrayListIterator<String>(R);
 		return R;
 	}
-
 }

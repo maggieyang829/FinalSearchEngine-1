@@ -85,7 +85,7 @@ class SearchSuffix extends Traverser {
 		String itemValue = (String) F.Key.getFieldValue();
 		String fieldValue = (String) field.getFieldValue();
 			if (F.Key.getFieldName().equals(field.getFieldName())
-				&& fieldValue.endsWith(itemValue)){
+				&& itemValue.endsWith(fieldValue)){
 		    hitList.add(F);
 		    }
 			return true;
@@ -109,7 +109,7 @@ class SearchPrefix extends Traverser {
 		String itemValue = (String) F.Key.getFieldValue();
 		String fieldValue = (String) field.getFieldValue();
 			if (F.Key.getFieldName().equals(field.getFieldName())
-				&& fieldValue.startsWith(itemValue)){
+				&& itemValue.startsWith(fieldValue)){
 		    hitList.add(F);
 		    }
 			return true;
@@ -133,7 +133,7 @@ class SearchContains extends Traverser {
 		String itemValue = (String) F.Key.getFieldValue();
 		String fieldValue = (String) field.getFieldValue();
 			if (F.Key.getFieldName().equals(field.getFieldName())
-				&& fieldValue.contains(itemValue)){
+				&& itemValue.contains(fieldValue)){
 		    hLst.add(F);
 		    }
 			return true;

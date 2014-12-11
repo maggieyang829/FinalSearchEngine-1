@@ -1,11 +1,11 @@
 0.txt Verb Dancing 
-1.txt Noun 
+1.txt Noun Plant
 2.txt Verb Planning
-3.txt Noun
+3.txt Noun Danish
 4.txt Verb Handled
-5.txt Noun
+5.txt Noun Daniel
 6.txt Verb Happened
-7.txt Noun
+7.txt Noun Cradle
 8.txt Verb Curdle
-9.txt Noun
+9.txt Noun Table
 w.txt EOF EOF
