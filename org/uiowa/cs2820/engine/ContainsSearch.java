@@ -15,11 +15,12 @@ public class ContainsSearch extends Search {
 		target = F;
 	}
 
-	public String[] doSearch() {
+	public ListIterator<String> doSearch() {
 		SearchContains P = new SearchContains(target);
 		String[] Result = D.fetch(P);
-		if ( Result == null) return new String[0];
-		return Result;
+		if ( Result == null) Result = new String[0];
+		ListIterator<String> L = new ListIterator<String>(Result);
+		return L;
 	}
 	
 }

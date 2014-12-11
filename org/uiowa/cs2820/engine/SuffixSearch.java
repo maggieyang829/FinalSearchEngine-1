@@ -13,11 +13,12 @@ public class SuffixSearch {
 		target = F;
 	}
 
-	public String[] doSearch() {
+	public ListIterator<String> doSearch() {
 		SearchSuffix P = new SearchSuffix(target);
 		String[] Result = D.fetch(P);
-		if ( Result == null) return new String[0];
-		return Result;
+		if ( Result == null) Result = new String[0];
+		ListIterator<String> L = new ListIterator<String>(Result);
+		return L;
 	}
 	
 }

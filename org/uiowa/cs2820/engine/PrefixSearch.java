@@ -11,11 +11,11 @@ public class PrefixSearch extends Search {
 	}
 
 
-	public String[] doSearch() {
+	public ListIterator<String> doSearch() {
 		SearchPrefix S = new SearchPrefix(target);
 		String [] R = D.fetch(S);
 		if (R == null) R = new String[0];
-		//ArrayListIterator<String> A = new ArrayListIterator<String>(R);
-		return R;
+		ListIterator<String> L = new ListIterator<String>(R);
+		return L;
 	}
 }

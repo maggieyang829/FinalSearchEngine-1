@@ -13,12 +13,12 @@ public class FieldSearch extends Search{
 	}
 
 
-public String[] doSearch() {
+public ListIterator<String> doSearch() {
 	SearchField S = new SearchField(target);
 	String [] R = D.fetch(S);
 	if (R == null) R = new String[0];
-	//ArrayListIterator<String> A = new ArrayListIterator<String>(R);
-	return R;
+	ListIterator<String> L = new ListIterator<String>(R);
+	return L;
 	}
 
 }
