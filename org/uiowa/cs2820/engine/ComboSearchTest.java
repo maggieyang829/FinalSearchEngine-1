@@ -13,6 +13,7 @@ import org.junit.Test;
 
 public class ComboSearchTest {
 
+	
 	// put in some data
 	@Test
 	public void setup() {	
@@ -52,11 +53,45 @@ public class ComboSearchTest {
 		  }
 	    }
 	
-	// test for orSearch
-	// returns identifiers that have Field = ("Car", "truck")
-	// or Field < ("Part","axle")
+	/*
+	 * test to make sure type of ComboSearch is specified:
+	 * must be "and" or "or"
+	 */
 	@Test
-	public void test1() {
+	public void testInvalidComboSearch() {
+		Field f = new Field("Car", "truck");
+		FieldSearch F = new FieldSearch(f);
+		Field g = new Field("Part","axle");
+		LessThanSearch G = new LessThanSearch(g);
+		ComboSearch C = new ComboSearch(F, G, "invalid");
+		String [] S = C.doSearch();
+		assertNull(S);
+	    }  
+	
+	/*
+	 * test for andSearch
+	 * disjoint: expect 0 identifiers to be returned
+	 * Field < ("Car","truck") and Field > ("Part","gear")
+	 */
+	@Test
+	public void testAndNone() {
+		Field f = new Field("Car","truck");
+		LessThanSearch F = new LessThanSearch(f);
+		Field g = new Field("Part","gear");
+		GreaterThanSearch G = new GreaterThanSearch(g);
+		ComboSearch C = new ComboSearch(F, G, "and");
+		String [] S = C.doSearch();
+		assertEquals(S.length,0);
+		for (String s: S) System.out.println(s);
+	    } 
+	
+	/*
+	 * test for orSearch
+	 * returns identifiers that have Field = ("Car", "truck")
+	 * or Field < ("Part","axle")
+	 */
+	@Test
+	public void testOr() {
 		Field f = new Field("Car", "truck");
 		FieldSearch F = new FieldSearch(f);
 		Field g = new Field("Part","axle");
@@ -67,19 +102,26 @@ public class ComboSearchTest {
 		for (String s: S) System.out.println(s);
 	    } 
 	
-	// test for andSearch
-	// returns identifiers that have Field = ("Car","axle")
-	// and Field > ("Part","gear")
+	/*
+	 * test for andSearch
+	 * disjoint: expect 2 identifiers to be returned
+	 * 7.txt, 5.txt for box, gear
+	 * Field < ("Part","rod") and Field > ("Part","axle")
+	 */
 	@Test
-	public void test2() {
-		Field f = new Field("Part","axle");
-		FieldSearch F = new FieldSearch(f);
-		Field g = new Field("Part","gear");
+	public void testAnd() {
+		Field f = new Field("Part","rod");
+		LessThanSearch F = new LessThanSearch(f);
+		Field g = new Field("Part","axle");
 		GreaterThanSearch G = new GreaterThanSearch(g);
 		ComboSearch C = new ComboSearch(F, G, "and");
 		String [] S = C.doSearch();
-		assertEquals(S.length,3);
+		assertEquals(S.length,2);
 		for (String s: S) System.out.println(s);
 	    } 
+	    
+	 
+	    
+
 
 }
