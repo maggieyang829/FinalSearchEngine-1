@@ -59,7 +59,7 @@ public class PrefixSuffixContainsTest {
 	public void PrefixSearchTest() {
 		Field f = new Field("Noun","Dan");
 		PrefixSearch F = new PrefixSearch(f);
-		String[] S = F.doSearch();
+		ListIterator<String> S = F.doSearch();
 
 		//make an ArrayList with expected result to compare with actual return value
 		ArrayList<String> compare = new ArrayList<String>();
@@ -72,7 +72,7 @@ public class PrefixSuffixContainsTest {
 	public void SuffixSearchTest() {
     	Field f = new Field("Verb","ing");
 		SuffixSearch F = new SuffixSearch(f);
-		String[] S = F.doSearch();
+		ListIterator<String> S = F.doSearch();
 		
 		ArrayList<String> compare = new ArrayList<String>();
 		compare.add("0.txt");
@@ -84,7 +84,7 @@ public class PrefixSuffixContainsTest {
 	public void ContainsSearchTest() {
     	Field f = new Field("Noun","an");
 		ContainsSearch F = new ContainsSearch(f);
-		String[] S = F.doSearch();
+		ListIterator<String> S = F.doSearch();
 		//System.out.println(getResult(S));
 		
 		ArrayList<String> compare = new ArrayList<String>();
@@ -95,10 +95,10 @@ public class PrefixSuffixContainsTest {
 	}	
   
 	//Added method to compare the content return by the search vs just the length of the returned value
-	public ArrayList<String> getResult(String[] S) {
+	public ArrayList<String> getResult(ListIterator<String> I) {
 		ArrayList<String> result = new ArrayList<String>();
-		for (String s: S) {
-			result.add(s.toString());
+		while(I.hasNext()) {
+			result.add(I.next());
 		}
 		return result;
 	}

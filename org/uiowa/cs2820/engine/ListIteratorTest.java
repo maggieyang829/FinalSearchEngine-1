@@ -50,4 +50,12 @@ public class ListIteratorTest {
 		}
 		assertEquals(I.next(), "1");
 	}
+	
+	@Test
+	public void toStringArrayTest() {
+		String[] S = "mystring".split("");
+		ListIterator<String> I = new ListIterator<String>(S);
+		String[] S2 = I.toStringArray();
+		assertEquals(S,S2);
+	}
 }
