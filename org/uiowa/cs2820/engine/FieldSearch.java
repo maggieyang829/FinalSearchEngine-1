@@ -1,6 +1,6 @@
 package org.uiowa.cs2820.engine;
 
-import org.uiowa.cs2820.engine.ArrayListIterator;
+import org.uiowa.cs2820.engine.ListIterator;
 
 public class FieldSearch extends Search{
   Field target;
