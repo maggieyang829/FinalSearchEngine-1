@@ -39,17 +39,15 @@ public class ListIteratorTest {
 		assertFalse(I.hasNext());
 	}
 	
-	//This checks the remove method by removing all items and checking hasNext
+	//Checks remove method by removing all items except "1" and checking if I.next() = "1"
 	@Test
 	public void removeTest() {
-		String[] S = "000000".split("");
+		String[] S = "000001".split("");
 		ListIterator<String> I = new ListIterator<String>(S);
-		while(I.hasNext()) {
-			String s = I.next();
-			if(s.equals("0")) {
-				I.remove();
-			}
+		for(int i=0; i < 5; i++) {
+			I.next();
+			I.remove();
 		}
-		assertFalse(I.hasNext());
+		assertEquals(I.next(), "1");
 	}
 }
