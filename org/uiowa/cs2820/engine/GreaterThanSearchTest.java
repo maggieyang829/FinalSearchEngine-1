@@ -55,9 +55,9 @@ public class GreaterThanSearchTest {
 	public void test1() {
 		Field f = new Field("Part","axle");
 		GreaterThanSearch F = new GreaterThanSearch(f);
-		String [] S = F.doSearch();
-		assertEquals(S.length,3);
-		for (String s: S) System.out.println(s);
+		ListIterator<String> S = F.doSearch();
+		assertEquals(S.length(),3);
+		while (S.hasNext()) System.out.println(S.next());
 	    } 
 	  
 

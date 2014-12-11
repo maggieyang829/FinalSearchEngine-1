@@ -52,10 +52,9 @@ public class ListIteratorTest {
 	}
 	
 	@Test
-	public void toStringArrayTest() {
-		String[] S = "mystring".split("");
+	public void lengthTest() {
+		String[] S = "123".split("");
 		ListIterator<String> I = new ListIterator<String>(S);
-		String[] S2 = I.toStringArray();
-		assertEquals(S,S2);
+		assertEquals(I.length(), 3);
 	}
 }
