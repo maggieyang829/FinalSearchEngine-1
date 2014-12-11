@@ -27,4 +27,21 @@ public class ListIterator<String> implements Iterator<String>{
 		I.remove();
 		
 	}
+	
+	public int length() {
+		int count = 0;
+		while(I.hasNext()) {
+			count += 1;
+		}
+		return count;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public String[] toStringArray() {
+		java.lang.String[] S = new java.lang.String[((CharSequence) I).length()];
+		for(int i=0; i < S.length; i++) {
+			S[i] = (java.lang.String) I.next();
+		}
+		return (String[]) S;
+	}
 }
