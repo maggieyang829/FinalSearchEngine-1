@@ -24,7 +24,9 @@ public class ListIteratorTest {
 		assertEquals(I.next(), "1");
 	}
 	
-	//This tests to see if iterator is working and if the iterator is at the end
+	/*This tests to see if iterator is working by comparing the last index of 
+	 the created array list to the last element in S and if the iterator I is at 
+	 the end of the list */
 	@Test
 	public void indexTest() {
 		String[] S = "01234567".split("");
