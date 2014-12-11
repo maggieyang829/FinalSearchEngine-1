@@ -29,14 +29,21 @@ public class ComboSearch extends Search {
 		String[] ids2 = null;
 		String[] result = null;
 		
-		// perform searches
+		// perform searches	
 		ids1 = this.obj1.doSearch();
 		ids2 = this.obj2.doSearch();
+		
+		/* fix this
+		if ( ids1.equals(null) && ids2.equals(null) ) {
+			System.out.println("nulls ");
+			return result;
+		}
+		*/
 		
 		// declare Hashsets to find union
 		Set<String> set1 = new HashSet<String>(Arrays.asList(ids1));
 		Set<String> set2 = new HashSet<String>(Arrays.asList(ids2));
-		Set<String> union = new HashSet<String>(set1);
+		Set<String> union = new HashSet<String>(set1);	
 		
 		// find union
 		union.addAll(set2);
@@ -56,7 +63,29 @@ public class ComboSearch extends Search {
 	 */
 	public String[] andSearch(){
 		
-		return null;
+		// declare string arrays ids1, ids2
+		String[] ids1 = null;
+		String[] ids2 = null;
+		String[] result = null;
+		
+		// perform searches
+		ids1 = this.obj1.doSearch();
+		ids2 = this.obj2.doSearch();
+		
+		// declare Hashsets to find intersection
+		Set<String> set1 = new HashSet<String>(Arrays.asList(ids1));
+		Set<String> set2 = new HashSet<String>(Arrays.asList(ids2));
+		Set<String> intersection = new HashSet<String>(set1);
+		
+		// find intersection
+		intersection.retainAll(set2);
+		
+		// convert back into string array to return
+		result = intersection.toArray(new String[intersection.size()]);
+		for (String s: result) System.out.println(s);
+		
+		return result;
+
 	}
 	
 	/*
