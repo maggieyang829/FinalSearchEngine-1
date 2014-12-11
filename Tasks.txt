@@ -16,12 +16,12 @@ LOG
 12/2, T: Group meeting. Discussed splitting group into 2 pairs of partners: Mary & Xiaomeng, Austin & Khashi. 
 12/3, W: Mary & Xiaomeng met to talk about 3 & 4.
 	FieldSearch: add methods findLess, findGreater, findPrefix, findSuffix, findContains
-<<<<<<< HEAD
+
 	Add new class (ComboSearch) for combinations of searches
 	Add new class (StringParser) for method parse
 12/4: Th: Mary, Austin, Xiaomeng met to discuss roles in the project in more detail and continue work in the
 	planning stage. Some notes are in Plan.txt.
-=======
+
 	Add new class (IDSearch) for method findID
 	Add new class (StringParser) for method parse
 12/4 Th: Austin, Mary, Xiaomeng meet to discuss order of actions and outline a more specific plan of action. 
@@ -32,7 +32,7 @@ LOG
 	course of action for implementing special searches. Khashi researched how to return an iterator. We were able to
 	bounce ideas off of each other during this process.
 12/6 S: Mary added 
->>>>>>> FETCH_HEAD
+
 
 12/8: Group meets to discuss structure for searches. Group decides Mary and Xiaomeng will focus on
 	restructuring, while Austin and Khashi will focus on other things. Mary and Xiaomeng restructure searches 
@@ -51,3 +51,11 @@ LOG
 	  integration test for equal search and GreaterthanTest for Greaterthan search, which is implemented by Mary.
 	  now that we have this design, every other searches can simply follow the way GreaterThanSearch is done.
 	  The major part is finished. Xiaomeng also feels accomplished.
+
+12/10: Austin: I researched more about adding a Server to the project, executed some examples to get a better idea, and ended up spending
+	and hour or so trying to resolve some conflicts the group was having while syncing and committing. Also added Prefix, Suffix, and 
+	Contains classes for searching.
+
+12:11: Austin: Due to conflicting schedules with Khashi, Khashi and I decided to partition up the work in a different way. I added the
+	tests for the different searches. Note to teammates that I added a getResult method inside the test class that will allow
+	you to check that the result of your search is equal versus just checking to see if the length of the search is equal.
