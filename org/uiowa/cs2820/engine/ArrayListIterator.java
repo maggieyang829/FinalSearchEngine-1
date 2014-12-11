@@ -18,4 +18,10 @@ public class ArrayListIterator<String> implements Iterator<String>{
 	public boolean hasNext() {
 		return I.hasNext();
 	}
+
+	@Override
+	public void remove() {
+		// TODO Auto-generated method stub
+		
+	}
 }
