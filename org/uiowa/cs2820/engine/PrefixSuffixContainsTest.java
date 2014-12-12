@@ -74,8 +74,9 @@ public class PrefixSuffixContainsTest {
 		PrefixSearch F = new PrefixSearch(f);
 		ListIterator<String> S = F.doSearch();
 		
-		ArrayList<String> compare = new ArrayList<String>();
-		assertEquals(getResult(S),compare);
+		String[] X = new String[0];
+		ListIterator<String> compare = new ListIterator<String>(X);
+		assertEquals(S.toArrayList(),compare.toArrayList());
 	}
 	
 	@Test

@@ -13,7 +13,7 @@ public class PrefixSearch extends Search {
 	public ListIterator<String> doSearch() {
 		SearchPrefix S = new SearchPrefix(target);
 		String [] R = D.fetch(S);
-		if (R == null) { return new ListIterator<String>(R);}
+		if (R == null) { R = new String[0];}
 		ListIterator<String> L = new ListIterator<String>(R);
 		return L;
 	}
