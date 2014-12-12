@@ -2,7 +2,7 @@ package org.uiowa.cs2820.engine;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
+import java.util.*;
 
 import org.junit.Test;
 
@@ -51,10 +51,31 @@ public class ListIteratorTest {
 		assertEquals(I.next(), "1");
 	}
 	
+	//Test for length method
 	@Test
 	public void lengthTest() {
 		String[] S = "123".split("");
 		ListIterator<String> I = new ListIterator<String>(S);
 		assertEquals(I.length(), 3);
+	}
+	
+	//Test to see if iterator to linked list conversion method works
+	@Test
+	public void toLinkedListTest() {
+		String[] S = "123".split("");
+		LinkedList<String> L = new LinkedList<String>(Arrays.asList(S));
+		ListIterator<String> I = new ListIterator<String>(S);
+		assertEquals(I.toLinkedList(), L);
+		
+	}
+	
+	//Test to see if iterator to array list conversion method works
+	@Test
+	public void toArrayListTest() {
+		String[] S = "123".split("");
+		ArrayList<String> L = new ArrayList<String>(Arrays.asList(S));
+		ListIterator<String> I = new ListIterator<String>(S);
+		assertEquals(I.toArrayList(), L);
+		
 	}
 }

@@ -32,7 +32,8 @@ public class IntegrationTest {
 	assertEquals(S.length(),1);
 	}
 
-    @Test
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	@Test
     public void test1() {	
  	CheckPoint.reset();
 	DiskSpace.reset();

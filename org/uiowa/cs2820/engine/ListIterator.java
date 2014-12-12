@@ -28,8 +28,8 @@ public class ListIterator<String> implements Iterator<String>{
 	}
 	
 	public int length() {
-		int count = toLinkedList().size();
-		return count;
+		int length = toLinkedList().size();
+		return length;
 	}
 	
 	public LinkedList<String> toLinkedList() {
@@ -37,5 +37,13 @@ public class ListIterator<String> implements Iterator<String>{
 		while(hasNext()) L.add(next());
 		I = L.iterator();
 		return L;
+	}
+	
+	public ArrayList<String> toArrayList() {
+		ArrayList<String> A = new ArrayList<String>();
+		while(hasNext()) A.add(next());
+		LinkedList<String> L = new LinkedList<String>(A);
+		I = L.iterator();
+		return A;
 	}
 }
