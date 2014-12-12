@@ -22,7 +22,7 @@ public class ComboSearch extends Search {
 	 *  for each identifier in ids1, ids2, add to set
 	 */
 	
-	public String[] orSearch(){
+	public ListIterator<String> orSearch(){
 		
 		// declare string arrays ids1, ids2
 		String[] ids1 = null;
@@ -30,8 +30,8 @@ public class ComboSearch extends Search {
 		String[] result = null;
 		
 		// perform searches	
-		ids1 = this.obj1.doSearch();
-		ids2 = this.obj2.doSearch();
+		ids1 = this.obj1.doSearch().toStringArray();
+		ids2 = this.obj2.doSearch().toStringArray();
 		
 		/* fix this
 		if ( ids1.equals(null) && ids2.equals(null) ) {
@@ -50,8 +50,8 @@ public class ComboSearch extends Search {
 		
 		// convert back into string array to return
 		result = union.toArray(new String[union.size()]);
-		
-		return result;
+		ListIterator<String> resultIterator = new ListIterator<String>(result);
+		return resultIterator;
 		
 	}
 	
@@ -61,7 +61,7 @@ public class ComboSearch extends Search {
 	 *  let ids2 = identifiers returned from s2
 	 *  for each identifier in ids1, ids2, add to set
 	 */
-	public String[] andSearch(){
+	public ListIterator<String> andSearch(){
 		
 		// declare string arrays ids1, ids2
 		String[] ids1 = null;
@@ -69,8 +69,8 @@ public class ComboSearch extends Search {
 		String[] result = null;
 		
 		// perform searches
-		ids1 = this.obj1.doSearch();
-		ids2 = this.obj2.doSearch();
+		ids1 = this.obj1.doSearch().toStringArray();
+		ids2 = this.obj2.doSearch().toStringArray();
 		
 		// declare Hashsets to find intersection
 		Set<String> set1 = new HashSet<String>(Arrays.asList(ids1));
@@ -83,8 +83,8 @@ public class ComboSearch extends Search {
 		// convert back into string array to return
 		result = intersection.toArray(new String[intersection.size()]);
 		for (String s: result) System.out.println(s);
-		
-		return result;
+		ListIterator<String> resultIterator = new ListIterator<String>(result);
+		return resultIterator;
 
 	}
 	
@@ -93,19 +93,19 @@ public class ComboSearch extends Search {
 	 * call appropriate combining method: orSearch or andSearch
 	 */
 	@Override
-	public String[] doSearch() {
-		String[] result = null;
+	public ListIterator<String> doSearch() throws NullPointerException{
+		ListIterator<String> resultIterator = null;
 		// check if orSearch or andSearch
 		if ( this.s == "or" ) {
-			result = this.orSearch();
+			resultIterator = this.orSearch();
 		}
 		else if ( this.s == "and" ) {
-			result = this.andSearch();
+			resultIterator = this.andSearch();
 		}
 		else {
 			System.out.println("Specify 'and' or 'or' search");
 		}
-		return result;
+		return resultIterator;
 	}
 	
 	public String toString() {

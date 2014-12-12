@@ -64,7 +64,7 @@ public class ComboSearchTest {
 		Field g = new Field("Part","axle");
 		LessThanSearch G = new LessThanSearch(g);
 		ComboSearch C = new ComboSearch(F, G, "invalid");
-		String [] S = C.doSearch();
+		ListIterator<String> S = C.doSearch();
 		assertNull(S);
 	    }  
 	
@@ -80,9 +80,9 @@ public class ComboSearchTest {
 		Field g = new Field("Part","gear");
 		GreaterThanSearch G = new GreaterThanSearch(g);
 		ComboSearch C = new ComboSearch(F, G, "and");
-		String [] S = C.doSearch();
-		assertEquals(S.length,0);
-		for (String s: S) System.out.println(s);
+		ListIterator<String> S = C.doSearch();
+		assertEquals(S.length(),0);
+		while(S.hasNext()) System.out.println(S.next());
 	    } 
 	
 	/*
@@ -97,9 +97,9 @@ public class ComboSearchTest {
 		Field g = new Field("Part","axle");
 		LessThanSearch G = new LessThanSearch(g);
 		ComboSearch C = new ComboSearch(F, G, "or");
-		String [] S = C.doSearch();
-		assertEquals(S.length,5);
-		for (String s: S) System.out.println(s);
+		ListIterator<String> S = C.doSearch();
+		assertEquals(S.length(),5);
+		while(S.hasNext()) System.out.println(S.next());
 	    } 
 	
 	/*
@@ -115,9 +115,9 @@ public class ComboSearchTest {
 		Field g = new Field("Part","axle");
 		GreaterThanSearch G = new GreaterThanSearch(g);
 		ComboSearch C = new ComboSearch(F, G, "and");
-		String [] S = C.doSearch();
-		assertEquals(S.length,2);
-		for (String s: S) System.out.println(s);
+		ListIterator<String> S = C.doSearch();
+		assertEquals(S.length(),2);
+		while(S.hasNext()) System.out.println(S.next());
 	    } 
 	    
 	 
