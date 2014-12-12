@@ -76,6 +76,13 @@ public class ListIteratorTest {
 		ArrayList<String> L = new ArrayList<String>(Arrays.asList(S));
 		ListIterator<String> I = new ListIterator<String>(S);
 		assertEquals(I.toArrayList(), L);
-		
+	}
+	
+
+	@Test
+	public void toStringArrayTest() {
+		String[] S = "123".split("");
+		ListIterator<String> I = new ListIterator<String>(S);
+		assertArrayEquals(I.toStringArray(), S);
 	}
 }
