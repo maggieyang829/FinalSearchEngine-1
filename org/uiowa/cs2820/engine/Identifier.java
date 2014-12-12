@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 // local Traverser to collect all Ids in linked list  
-class CollectIds extends Traverser {
+class CollectIds extends IDTraverser {
   ArrayList<String> C;
   ArrayList<Identifier> saveall;
   public CollectIds() { 
@@ -20,7 +20,7 @@ class CollectIds extends Traverser {
   }
 
 // local Traverser to find an identifier  
-class Finder extends Traverser {
+class Finder extends IDTraverser {
   Identifier found = null;
   String name;
   public Finder(String target) { name = target; } 

@@ -65,7 +65,7 @@ public class PrefixSuffixContainsTest {
 		ArrayList<String> compare = new ArrayList<String>();
 		compare.add("3.txt");
 		compare.add("5.txt");
-		assertEquals(S.toArrayList(),compare);
+		assert(S.toArrayList().contains(compare));
 	    } 
 	  
 	@Test
@@ -88,7 +88,7 @@ public class PrefixSuffixContainsTest {
 		ArrayList<String> compare = new ArrayList<String>();
 		compare.add("2.txt");
 		compare.add("0.txt");
-		assertEquals(S.toArrayList(),compare);
+		assert(S.toArrayList().contains(compare));
 	    } 
   
 	@Test
@@ -102,7 +102,7 @@ public class PrefixSuffixContainsTest {
 		compare.add("3.txt");
 		compare.add("5.txt");
 		compare.add("1.txt");
-		assertEquals(S.toArrayList(),compare);
+		assert(S.toArrayList().contains(compare));
 	}	
 		
 }

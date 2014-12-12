@@ -81,4 +81,15 @@ public class DiskLinkedList {
       next = D.getNext();
       }
     }
+  public void traverse(IDTraverser T) {
+	    if (first < 0) return;  // nothing to do if no list exists
+	    Item D = (Item) Utility.revert( DiskSpace.read(first) ); 
+	    boolean carry = T.process(D); 
+	    int next = D.getNext();
+	    while (carry && next >= 0) {
+	      D = (Item) Utility.revert( DiskSpace.read(next) ); 
+	      carry = T.process(D);
+	      next = D.getNext();
+	      }
+	    }
   }

@@ -5,79 +5,63 @@ import java.io.*;
 
 // local Traverser to find a Node with given Field
 class SearchField extends Traverser {
-  Field f = null;
   Node h = null;
-  ArrayList<Node> hLst;
 
-  public SearchField( Field x ) {f = x;} 
+  public SearchField( Field x ) {
+	  super(x);
+  } 
 
   public boolean process(Item I) { 
     Node F = (Node) I;  // we are traversing Nodes 
-    if (F.Key.equals(f)) {
+    if (F.Key.equals(field)) {
       h = F; // remember this node
-      if(hLst==null) hLst = new ArrayList<Node>();
-      hLst.add(F);
+      if(hitList==null) hitList = new ArrayList<Node>();
+      hitList.add(F);
       return false;  // stop traversing; 
       }
     return true;
     }
-  public ArrayList<Node> getLst(){
-	  return hLst;
-  }
-  }
+}
 
 class SearchGreater extends Traverser {
-	  Field f = null;
-	  ArrayList<Node> hLst;
+
 	  public SearchGreater( Field x ) { 
-		  f = x; 
-		  hLst = new ArrayList<Node>();
+		  super(x);
 	  } 
 	  public boolean process(Item I) {
 		Node F = (Node) I; 
 		String itemValue = (String) F.Key.getFieldValue();
-		String fieldValue = (String) f.getFieldValue();
-		   if (F.Key.getFieldName().equals(f.getFieldName())
+		String fieldValue = (String) field.getFieldValue();
+		   if (F.Key.getFieldName().equals(field.getFieldName())
 		    	&& itemValue.compareTo(fieldValue)>0) {
-		    hLst.add(F);
+		    hitList.add(F);
 		    }
 			return true;
 		}
-	  public ArrayList<Node> getLst(){
-		  return hLst;
-	  }
-	  }
+}
 
 class SearchLess extends Traverser {
-	  Field f = null;
-	  ArrayList<Node> hLst;
+
 	  public SearchLess( Field x ) { 
-		  f = x; 
-		  hLst = new ArrayList<Node>();
+		  super(x);
 	  } 
 	  public boolean process(Item I) {
 		Node F = (Node) I; 
 		String itemValue = (String) F.Key.getFieldValue();
-		String fieldValue = (String) f.getFieldValue();
-		   if (F.Key.getFieldName().equals(f.getFieldName())
+		String fieldValue = (String) field.getFieldValue();
+		   if (F.Key.getFieldName().equals(field.getFieldName())
 		    	&& itemValue.compareTo(fieldValue)<0) {
-		    hLst.add(F);
+		    hitList.add(F);
 		    }
 			return true;
 		}
-	  public ArrayList<Node> getLst(){
-		  return hLst;
-	  }
 }
 
 
 class SearchSuffix extends Traverser {
-	Field field = null;
-	ArrayList<Node> hitList;
-	
+
 	public SearchSuffix( Field x ) {
-		field = x;
-		hitList = new ArrayList<Node>();
+		super(x);
 	}
 	@Override
 	public boolean process(Item I) {
@@ -90,18 +74,12 @@ class SearchSuffix extends Traverser {
 		    }
 			return true;
 		}
-	  public ArrayList<Node> getLst(){
-		  return hitList;
-	  }
 }
 
 class SearchPrefix extends Traverser {
-	Field field = null;
-	ArrayList<Node> hitList;
-	
+
 	public SearchPrefix( Field x ) {
-		field = x;
-		hitList = new ArrayList<Node>();
+		super(x);
 	}
 	@Override
 	public boolean process(Item I) {
@@ -114,19 +92,14 @@ class SearchPrefix extends Traverser {
 		    }
 			return true;
 		}
-	  public ArrayList<Node> getLst(){
-		  return hitList;
-	  }
 }
 
 class SearchContains extends Traverser {
-	Field field = null;
-	ArrayList<Node> hLst;
-	
+
 	public SearchContains( Field x ) {
-		field = x;
-		hLst = new ArrayList<Node>();
+		super(x);
 	}
+	
 	@Override
 	public boolean process(Item I) {
 		Node F = (Node) I;
@@ -134,24 +107,23 @@ class SearchContains extends Traverser {
 		String fieldValue = (String) field.getFieldValue();
 			if (F.Key.getFieldName().equals(field.getFieldName())
 				&& itemValue.contains(fieldValue)){
-		    hLst.add(F);
+		    hitList.add(F);
 		    }
 			return true;
 		}
-	  public ArrayList<Node> getLst(){
-		  return hLst;
-	  }
 }
 	
 
 // local Traverser to find remove Id from all nodes
-class IdRemover extends Traverser {
+class IdRemover extends IDTraverser {
   ArrayList<Node> empties;  // an array of nodes with no Ids
   String identifier;        // identifier to remove
+ 
   public IdRemover( String id ) {
     identifier = id;
     empties = new ArrayList<Node>();
     }
+  
   public boolean process(Item I) {
     Node F = (Node) I;
     int oldhead = F.identlist;
