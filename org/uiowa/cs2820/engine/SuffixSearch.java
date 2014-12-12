@@ -2,7 +2,7 @@ package org.uiowa.cs2820.engine;
 
 import java.util.ArrayList;
 
-public class SuffixSearch {
+public class SuffixSearch extends Search {
 
 	ArrayList<Node> fieldList;
 	Field target;

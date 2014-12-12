@@ -45,7 +45,7 @@ public class StringParser {
 		Search s = null;
 
 		if (function.equals("prefix"))        s = new PrefixSearch(f);
-		//else if (function.equals("suffix"))   s = new SuffixSearch(f);
+		else if (function.equals("suffix"))   s = new SuffixSearch(f);
 		else if (function.equals("contains")) s = new ContainsSearch(f);
 		else if (function.equals("equals"))   s = new FieldSearch(f);
 		else if (function.equals("greater"))  s = new GreaterThanSearch(f);
