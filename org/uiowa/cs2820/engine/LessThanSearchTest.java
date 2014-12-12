@@ -59,5 +59,14 @@ public class LessThanSearchTest {
 		assertEquals(S.length(),4);
 		while(S.hasNext()) System.out.println(S.next());
 	    } 
-
+	
+	@Test
+	public void test2() {
+		Field f = new Field("Part","a");
+		LessThanSearch F = new LessThanSearch(f);
+		ListIterator<String> S = F.doSearch();
+		assertEquals(S.length(),0);
+		while(S.hasNext()) System.out.println(S.next());
+	    }
+	
 }
