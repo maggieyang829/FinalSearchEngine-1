@@ -59,6 +59,16 @@ public class GreaterThanSearchTest {
 		assertEquals(S.length(),3);
 		while (S.hasNext()) System.out.println(S.next());
 	    } 
+	
+	// another test: make sure it returns nothing
+	@Test
+	public void test2() {
+		Field f = new Field("Part","rod");
+		GreaterThanSearch F = new GreaterThanSearch(f);
+		ListIterator<String> S = F.doSearch();
+		assertEquals(S.length(),0);
+		while (S.hasNext()) System.out.println(S.next());
+	    } 
 	  
 
 

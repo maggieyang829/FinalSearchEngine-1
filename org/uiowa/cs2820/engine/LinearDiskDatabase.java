@@ -22,7 +22,12 @@ public class LinearDiskDatabase implements Database {
 	  //  System.out.println("arraylist length: "+n.size());
 	  //  System.out.println("They are: "+ n.get(0).Key.getFieldName());
 	    if (n == null) return new String[0];
-	    String[] first = Identifier.getAllIds((n.get(0)).identlist);
+	    // added line below
+	    String[] first = new String[0];
+	    // need to check to make sure it's not empty
+	    if (!n.isEmpty() ) {
+	    	first = Identifier.getAllIds((n.get(0)).identlist);
+	    }
 	    if(n.size() == 1) return first;
 
 	    Set<String> idSet = new HashSet<String>(Arrays.asList(first));	    
