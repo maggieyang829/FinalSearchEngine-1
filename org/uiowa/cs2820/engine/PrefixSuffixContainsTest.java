@@ -67,9 +67,10 @@ public class PrefixSuffixContainsTest {
 		compare.add("5.txt");
 		assert(S.toArrayList().contains(compare));
 	    } 
-	  
+	
+	//this tests to see if a prefix search returns null if there are no matches
 	@Test
-	public void PrefixSearchTest2() {
+	public void PrefixSearchReturnsNull() {
 		Field f = new Field("Noun","Null");
 		PrefixSearch F = new PrefixSearch(f);
 		ListIterator<String> S = F.doSearch();
@@ -90,7 +91,18 @@ public class PrefixSuffixContainsTest {
 		compare.add("0.txt");
 		assert(S.toArrayList().contains(compare));
 	    } 
-  
+
+	//tests to see if the result is null like it should be
+	@Test
+	public void SuffixSearchReturnsNull() {
+		Field f = new Field("Noun","Null");
+		SuffixSearch F = new SuffixSearch(f);
+		ListIterator<String> S = F.doSearch();
+		
+		String[] X = new String[0];
+		ListIterator<String> compare = new ListIterator<String>(X);
+		assertEquals(S.toArrayList(),compare.toArrayList());
+	}	
 	@Test
 	public void ContainsSearchTest() {
     	Field f = new Field("Noun","an");
@@ -104,5 +116,17 @@ public class PrefixSuffixContainsTest {
 		compare.add("1.txt");
 		assert(S.toArrayList().contains(compare));
 	}	
+	
+	
+	@Test
+	public void ContainsSearchReturnsNull() {
+		Field f = new Field("Noun","Null");
+		ContainsSearch F = new ContainsSearch(f);
+		ListIterator<String> S = F.doSearch();
+		
+		String[] X = new String[0];
+		ListIterator<String> compare = new ListIterator<String>(X);
+		assertEquals(S.toArrayList(),compare.toArrayList());
+	}
 		
 }

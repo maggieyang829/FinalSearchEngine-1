@@ -96,10 +96,10 @@ public class ComboSearch extends Search {
 	public ListIterator<String> doSearch() throws NullPointerException{
 		ListIterator<String> resultIterator = null;
 		// check if orSearch or andSearch
-		if ( this.s == "or" ) {
+		if ( this.s.equals("or")) {
 			resultIterator = this.orSearch();
 		}
-		else if ( this.s == "and" ) {
+		else if ( this.s.equals("and")) {
 			resultIterator = this.andSearch();
 		}
 		else {
