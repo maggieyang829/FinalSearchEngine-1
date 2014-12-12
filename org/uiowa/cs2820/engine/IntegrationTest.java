@@ -1,7 +1,9 @@
 package org.uiowa.cs2820.engine;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
+
 import java.io.*;
 import java.util.*;
 
@@ -20,14 +22,14 @@ public class IntegrationTest {
 	I.addField(f);
 	I.addField(new Field("three",3));
 	FieldSearch F = new FieldSearch(f);
-	String[] S = F.doSearch();
-	System.out.println("s length: "+S.length);
-	assertEquals(S.length,2);
-	assertEquals(S[0],"second.db");
-	assertEquals(S[1],"first.db");
+	ListIterator<String> S = F.doSearch();
+	System.out.println("s length: "+S.length());
+	assertEquals(S.length(),2);
+	assertEquals(S.toLinkedList().get(0),"second.db");
+	assertEquals(S.toLinkedList().get(1),"first.db");
 	I.remove();
 	S = F.doSearch();
-	assertEquals(S.length,1);
+	assertEquals(S.length(),1);
 	}
 
     @Test
@@ -72,21 +74,21 @@ public class IntegrationTest {
     public void test2() {	
 	Field f = new Field("golden","rumex");
 	FieldSearch F = new FieldSearch(f);
-	String[] S = F.doSearch();
-	assertEquals(S.length,1);
-	assertTrue(Arrays.asList(S).contains("2.txt"));
+	ListIterator<String> S = F.doSearch();
+	assertEquals(S.length(),1);
+	assertTrue(S.toLinkedList().contains("2.txt"));
 	f = new Field("not","riparia");
 	F = new FieldSearch(f);
 	S = F.doSearch();
-	assertTrue(Arrays.asList(S).contains("1.txt"));
+	assertTrue(S.toLinkedList().contains("1.txt"));
     }
   
     @Test
     public void test3() {
 	Field f = new Field("many","times");
 	FieldSearch F = new FieldSearch(f);
-	String [] S = F.doSearch();
-	assertEquals(S.length,30);
-	for (String s: S) System.out.println(s);
+	ListIterator<String> S = F.doSearch();
+	assertEquals(S.length(),30);
+	while(S.hasNext()) System.out.println(S.next());
     } 
   }

@@ -55,9 +55,9 @@ public class LessThanSearchTest {
 	public void test1() {
 		Field f = new Field("Part","axle");
 		LessThanSearch F = new LessThanSearch(f);
-		String [] S = F.doSearch();
-		assertEquals(S.length,4);
-		for (String s: S) System.out.println(s);
+		ListIterator<String> S = F.doSearch();
+		assertEquals(S.length(),4);
+		while(S.hasNext()) System.out.println(S.next());
 	    } 
 
 }
