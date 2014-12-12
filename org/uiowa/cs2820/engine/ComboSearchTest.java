@@ -87,6 +87,23 @@ public class ComboSearchTest {
 	
 	/*
 	 * test for orSearch
+	 * expect 0 identifiers to be returned
+	 * Field < ("Part","a") and Field > ("Part","rod")
+	 */
+	@Test
+	public void testOrNone() {
+		Field f = new Field("Part","a");
+		LessThanSearch F = new LessThanSearch(f);
+		Field g = new Field("Part","rod");
+		GreaterThanSearch G = new GreaterThanSearch(g);
+		ComboSearch C = new ComboSearch(F, G, "or");
+		ListIterator<String> S = C.doSearch();
+		assertEquals(S.length(),0);
+		while(S.hasNext()) System.out.println(S.next());
+	    } 
+	
+	/*
+	 * test for orSearch
 	 * returns identifiers that have Field = ("Car", "truck")
 	 * or Field < ("Part","axle")
 	 */
