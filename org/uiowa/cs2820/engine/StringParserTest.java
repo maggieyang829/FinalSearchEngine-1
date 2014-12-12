@@ -16,10 +16,15 @@ public class StringParserTest {
 		StringParser sp2 = new StringParser("Search (less (\"Word\",\"pre\")");
 		Search s2 = sp2.analyse();
 		
+		//test for fail case
+		StringParser spFail = new StringParser("search greater");
+		Search s3fail = spFail.analyse();
+		
 		assertTrue(s1 instanceof ComboSearch);
 		assertTrue(s2 instanceof LessThanSearch);
 		assertTrue(s1.toString().equals("ComboSearch: (GreaterThanSearch (Word,pre)) and (LessThanSearch (Temperature,85))"));
 		assertTrue(s2.toString().equals("LessThanSearch (Word,pre)"));
+		assertTrue(s3fail == null);
 	}
 
 }
