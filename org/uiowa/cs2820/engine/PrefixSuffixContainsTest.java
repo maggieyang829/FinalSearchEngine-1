@@ -65,7 +65,7 @@ public class PrefixSuffixContainsTest {
 		ArrayList<String> compare = new ArrayList<String>();
 		compare.add("3.txt");
 		compare.add("5.txt");
-		assertEquals(getResult(S),compare);
+		assertEquals(S.toArrayList(),compare);
 	    } 
 	  
 	@Test
@@ -75,9 +75,9 @@ public class PrefixSuffixContainsTest {
 		ListIterator<String> S = F.doSearch();
 		
 		ArrayList<String> compare = new ArrayList<String>();
-		compare.add("0.txt");
 		compare.add("2.txt");
-		assertEquals(getResult(S),compare);
+		compare.add("0.txt");
+		assertEquals(S.toArrayList(),compare);
 	    } 
   
 	@Test
@@ -89,18 +89,9 @@ public class PrefixSuffixContainsTest {
 		
 		ArrayList<String> compare = new ArrayList<String>();
 		compare.add("3.txt");
-		compare.add("1.txt");
 		compare.add("5.txt");
-		assertEquals(getResult(S),compare);
+		compare.add("1.txt");
+		assertEquals(S.toArrayList(),compare);
 	}	
-  
-	//Added method to compare the content return by the search vs just the length of the returned value
-	public ArrayList<String> getResult(ListIterator<String> I) {
-		ArrayList<String> result = new ArrayList<String>();
-		while(I.hasNext()) {
-			result.add(I.next());
-		}
-		return result;
-	}
 		
 }
