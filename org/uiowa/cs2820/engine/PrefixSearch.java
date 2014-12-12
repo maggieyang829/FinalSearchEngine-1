@@ -10,11 +10,10 @@ public class PrefixSearch extends Search {
 		target = F;
 	}
 
-
 	public ListIterator<String> doSearch() {
 		SearchPrefix S = new SearchPrefix(target);
 		String [] R = D.fetch(S);
-		if (R == null) R = new String[0];
+		if (R == null) { return new ListIterator<String>(R);}
 		ListIterator<String> L = new ListIterator<String>(R);
 		return L;
 	}

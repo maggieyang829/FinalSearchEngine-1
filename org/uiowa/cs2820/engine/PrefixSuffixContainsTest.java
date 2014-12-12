@@ -69,6 +69,16 @@ public class PrefixSuffixContainsTest {
 	    } 
 	  
 	@Test
+	public void PrefixSearchTest2() {
+		Field f = new Field("Noun","Null");
+		PrefixSearch F = new PrefixSearch(f);
+		ListIterator<String> S = F.doSearch();
+		
+		ArrayList<String> compare = new ArrayList<String>();
+		assertEquals(getResult(S),compare);
+	}
+	
+	@Test
 	public void SuffixSearchTest() {
     	Field f = new Field("Verb","ing");
 		SuffixSearch F = new SuffixSearch(f);

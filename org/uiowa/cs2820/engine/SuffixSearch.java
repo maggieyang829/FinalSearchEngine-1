@@ -2,7 +2,11 @@ package org.uiowa.cs2820.engine;
 
 import java.util.ArrayList;
 
+<<<<<<< Updated upstream
 public class SuffixSearch extends Search {
+=======
+public class SuffixSearch extends Search{
+>>>>>>> Stashed changes
 
 	ArrayList<Node> fieldList;
 	Field target;
