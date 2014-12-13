@@ -33,13 +33,6 @@ public class ComboSearch extends Search {
 		ids1 = this.obj1.doSearch().toStringArray();
 		ids2 = this.obj2.doSearch().toStringArray();
 		
-		/* fix this
-		if ( ids1.equals(null) && ids2.equals(null) ) {
-			System.out.println("nulls ");
-			return result;
-		}
-		*/
-		
 		// declare Hashsets to find union
 		Set<String> set1 = new HashSet<String>(Arrays.asList(ids1));
 		Set<String> set2 = new HashSet<String>(Arrays.asList(ids2));
