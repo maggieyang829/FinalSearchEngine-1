@@ -55,17 +55,6 @@ public class FinalIntegrationTest {
 		  }
 	}
 	
-//	@AfterClass
-//	public static void tearDownAfterClass() throws Exception {
-//	}
-//
-//	@Before
-//	public void setUp() throws Exception {
-//	}
-//
-//	@After
-//	public void tearDown() throws Exception {
-//	}
 
 	@Test
 	public void StringParserToComboAnd() {
@@ -73,8 +62,11 @@ public class FinalIntegrationTest {
 		StringParser sp = new StringParser(query);
 		ComboSearch s = (ComboSearch)sp.analyse();
 		ListIterator<String> li = s.doSearch();
-
+		
+		ArrayList<String> compare = new ArrayList<String>();
+		compare.add("3.txt");
 		assertEquals(li.length(),1);
+		assert(li.toArrayList().contains(compare));
 	 } 
 	
 	@Test
@@ -83,9 +75,26 @@ public class FinalIntegrationTest {
 		StringParser sp = new StringParser(query);
 		ComboSearch s = (ComboSearch)sp.analyse();
 		ListIterator<String> li = s.doSearch();
+		
+		ArrayList<String> compare = new ArrayList<String>();
+		compare.add("3.txt");
+		compare.add("5.txt");
 
 		assertEquals(li.length(),2);
-	 } 
+		assert(li.toArrayList().contains(compare));
+	 }
+	
+	@Test
+	public void StringParseToComboReturnNull() {
+		String query = "Search (prefix (\"Noun\",\"null\")) or (contains (\"Noun\",\"null\"))";
+		StringParser sp = new StringParser(query);
+		ComboSearch s = (ComboSearch)sp.analyse();
+		ListIterator<String> li = s.doSearch();
+
+		ArrayList<String> compare = new ArrayList<String>();
+		assertEquals(li.toArrayList(),compare);
+	}
 }
+
 
 

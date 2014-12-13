@@ -67,3 +67,21 @@ LOG
 		12/9: Had some issues with pushing to GitHub. Added < search. Made some changes in unit tests.
 		12/10: Added orSearch, andSearch to ComboSearch. Added more tests for both. More tests to be added.
 		To do: add more tests for <, > searches. Make sure to handle all cases.
+		
+12/13: Yesterday Austin, Mary and Xiaomeng met to add some integration tests and discuss the final submission
+		12/12: Austin added some unit tests to his search classes, and refactored the code to make it easier to add 
+		new searches. I added a new interface called IDTraverser. This was to satisfy the SRP so that the searches
+		could extend their own interface called Traverser, while the IDRemover class and others now extend the IDTraverser
+		interface.
+		
+Final thoughts (Austin):
+			I had to make a decision to scrap the server part of the project due to many complications. I spent many hours trying to
+		install Maven on my computer, which I did end up doing successfully. After installation I followed the instructions to create 
+		a new project. The problem became integrating this project into our group project. After much distress, I met with the professor
+		who helped me set it his project. This basically meant that all of my previous work had been scrapped because I now wasn't even
+		using what I had before. By this time it was Thursday and I knew our project had other work that needed to be done. With the deadline
+		approaching I decided that it made sense to focus on the functionality of the project versus just adding more features. I did
+		however, learn a lot about installing projects onto my computer. I learned a lot about using GitHub and resolving conflicts. A 
+		lot of my time was spent researching stuff that ultimately helped the team out, but wasn't something I could just push to GitHub
+		and get credit for. I hope this is accounted for when my grade is calculated.
+		
