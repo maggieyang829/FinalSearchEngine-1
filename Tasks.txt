@@ -67,3 +67,9 @@ LOG
 		12/9: Had some issues with pushing to GitHub. Added < search. Made some changes in unit tests.
 		12/10: Added orSearch, andSearch to ComboSearch. Added more tests for both. More tests to be added.
 		To do: add more tests for <, > searches. Make sure to handle all cases.
+		
+12/11: Mary was trying to figure out why tests that should not return anything were not working. Found that an extra statement
+	needed to be added to check if n was empty in LinearDiskDatabase and added it. Now, those kind of tests pass. Mary
+	added more of those kinds of tests.
+	
+12/11: Mary, Austin, and Xiaomeng met for a while and worked on some integration tests together. We feel accomplished.
