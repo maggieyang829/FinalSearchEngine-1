@@ -54,11 +54,8 @@ public class FinalIntegrationTest {
 		  }
 	}
 	
-<<<<<<< HEAD
-
-=======
 	//test for stringparser and combosearch with all searches
->>>>>>> FETCH_HEAD
+
 	@Test
 	public void StringParserToComboAnd() {
 		String query = "Search (less (\"Noun\",\"Plant\")) and (equals (\"Noun\",\"Danish\"))";
@@ -84,15 +81,9 @@ public class FinalIntegrationTest {
 		compare.add("5.txt");
 
 		assertEquals(li.length(),2);
-<<<<<<< HEAD
 		assert(li.toArrayList().contains(compare));
 	 }
 	
-	@Test
-	public void StringParseToComboReturnNull() {
-		String query = "Search (prefix (\"Noun\",\"null\")) or (contains (\"Noun\",\"null\"))";
-=======
-	 } 
 	
 	@Test
 	public void StringParserToComboOrContains() {
@@ -108,16 +99,13 @@ public class FinalIntegrationTest {
 	@Test
 	public void StringParserToComboAndNull() {
 		String query = "Search (less (\"Noun\",\"Danish\")) and (greater (\"Noun\",\"Danish\"))";
->>>>>>> FETCH_HEAD
+
 		StringParser sp = new StringParser(query);
 		ComboSearch s = (ComboSearch)sp.analyse();
 		ListIterator<String> li = s.doSearch();
 
-<<<<<<< HEAD
 		ArrayList<String> compare = new ArrayList<String>();
 		assertEquals(li.toArrayList(),compare);
-	}
-=======
 		assertEquals(li.length(),0);
 	 } 
 	
@@ -131,7 +119,7 @@ public class FinalIntegrationTest {
 
 		assertEquals(li.length(),3);
 	 }
->>>>>>> FETCH_HEAD
+
 }
 
 
