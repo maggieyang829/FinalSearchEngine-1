@@ -16,7 +16,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class FinalIntegrationTest {
-
 	@Test
 	public void setup() {	
 		CheckPoint.reset();
@@ -55,18 +54,7 @@ public class FinalIntegrationTest {
 		  }
 	}
 	
-//	@AfterClass
-//	public static void tearDownAfterClass() throws Exception {
-//	}
-//
-//	@Before
-//	public void setUp() throws Exception {
-//	}
-//
-//	@After
-//	public void tearDown() throws Exception {
-//	}
-
+	//test for stringparser and combosearch with all searches
 	@Test
 	public void StringParserToComboAnd() {
 		String query = "Search (less (\"Noun\",\"Plant\")) and (equals (\"Noun\",\"Danish\"))";
@@ -96,6 +84,28 @@ public class FinalIntegrationTest {
 
 		assertEquals(li.length(),4);
 	 } 
+	
+	//test on returning null
+	@Test
+	public void StringParserToComboAndNull() {
+		String query = "Search (less (\"Noun\",\"Danish\")) and (greater (\"Noun\",\"Danish\"))";
+		StringParser sp = new StringParser(query);
+		ComboSearch s = (ComboSearch)sp.analyse();
+		ListIterator<String> li = s.doSearch();
+
+		assertEquals(li.length(),0);
+	 } 
+	
+	//Test on single search
+	@Test
+	public void StringParserToGreater() {
+		String query = "Search (greater (\"Noun\",\"Daniel\"))";
+		StringParser sp = new StringParser(query);
+		GreaterThanSearch s = (GreaterThanSearch)sp.analyse();
+		ListIterator<String> li = s.doSearch();
+
+		assertEquals(li.length(),3);
+	 }
 }
 
 
