@@ -86,6 +86,16 @@ public class FinalIntegrationTest {
 
 		assertEquals(li.length(),2);
 	 } 
+	
+	@Test
+	public void StringParserToComboOrContains() {
+		String query = "Search (contains (\"Noun\",\"ani\")) or (suffix (\"Noun\",\"le\"))";
+		StringParser sp = new StringParser(query);
+		ComboSearch s = (ComboSearch)sp.analyse();
+		ListIterator<String> li = s.doSearch();
+
+		assertEquals(li.length(),4);
+	 } 
 }
 
 
