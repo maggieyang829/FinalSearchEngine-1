@@ -68,6 +68,7 @@ LOG
 		12/10: Added orSearch, andSearch to ComboSearch. Added more tests for both. More tests to be added.
 		To do: add more tests for <, > searches. Make sure to handle all cases.
 		
+<<<<<<< HEAD
 12/13: Yesterday Austin, Mary and Xiaomeng met to add some integration tests and discuss the final submission
 		12/12: Austin added some unit tests to his search classes, and refactored the code to make it easier to add 
 		new searches. I added a new interface called IDTraverser. This was to satisfy the SRP so that the searches
@@ -85,3 +86,10 @@ Final thoughts (Austin):
 		lot of my time was spent researching stuff that ultimately helped the team out, but wasn't something I could just push to GitHub
 		and get credit for. I hope this is accounted for when my grade is calculated.
 		
+=======
+12/11: Mary was trying to figure out why tests that should not return anything were not working. Found that an extra statement
+	needed to be added to check if n was empty in LinearDiskDatabase and added it. Now, those kind of tests pass. Mary
+	added more of those kinds of tests.
+	
+12/11: Mary, Austin, and Xiaomeng met for a while and worked on some integration tests together. We feel accomplished.
+>>>>>>> FETCH_HEAD
